@@ -5,46 +5,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Work · Jackie Miller</title>
 <meta name="description" content="Working case studies by Jackie Miller. Try them in your browser.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--black:#0A0A0A;--line:#262626;--bone:#F2EEE6;--text:#CFCAC2;--dim:#8a857e;--red:#B5121B}
+@font-face{font-family:'Humane';src:url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802a7_Humane-Regular.ttf') format('truetype');font-display:swap}
+:root{--black:#0A0A0A;--bone:#F2EEE6;--text:#CFCAC2;--red:#B5121B;--grey:#636363;--btn:#e9e9e9;--box:rgba(255,255,255,.08);--box-line:rgba(230,230,230,.1);--line:rgba(255,255,255,.1)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--black);color:var(--text);font:300 17px/1.55 'IBM Plex Sans',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px;width:100%}
-@media(max-width:600px){.wrap{padding:0 16px}}
-header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:48px;font:11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-a{color:var(--bone);text-decoration:none}
-a:hover{color:var(--red)}
-main{flex:1;padding:96px 0}
-.tag{font:11px 'IBM Plex Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-h1{font:400 clamp(64px,11vw,150px)/.9 'Bebas Neue',Impact,sans-serif;color:var(--bone);margin:20px 0 22px}
-p.lede{max-width:540px}
-.list{margin-top:72px;border-top:1px solid var(--line)}
-.item{display:grid;grid-template-columns:80px 1fr auto;gap:24px;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line)}
-.item .n{font:11px 'IBM Plex Mono',monospace;color:var(--dim)}
-.item h2{font:400 clamp(36px,5vw,56px)/1 'Bebas Neue',Impact,sans-serif;color:var(--bone);transition:color .2s}
-.item p{margin-top:6px;max-width:560px}
-.item .go{font:11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
-a.item:hover h2{color:var(--red)}
-@media(max-width:600px){.item{grid-template-columns:1fr}.item .n{order:-1}}
-footer{border-top:1px solid var(--line);padding:24px 0;font-size:12px;color:var(--dim)}
+body{background:var(--black) url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802bb_Group%2010268.png') 50% 50%/cover repeat-y;color:var(--text);font:400 16px/1.36 'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;position:relative;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:4px;transform:translateX(-50%);border-left:1px solid var(--line);border-right:1px solid var(--line);pointer-events:none}
+@media(max-width:479px){body:before{display:none}}
+body>*{position:relative;z-index:1}
+.wrap{max-width:1358px;margin:0 auto;padding:0 20px;width:100%}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+header a{font:400 20px 'Bebas Neue',sans-serif;letter-spacing:-.32px;color:var(--bone);text-decoration:none;transition:color .4s}
+header a:hover{color:var(--text)}
+main{flex:1;padding:72px 0 120px}
+.top{text-align:center;display:grid;justify-items:center;gap:26px}
+.kicker{font-size:14px;font-weight:500;letter-spacing:-.48px;text-transform:uppercase;color:var(--bone);line-height:1.05}
+.kicker span{display:block;font-weight:400;color:var(--text);margin-bottom:6px}
+h1{font:400 clamp(150px,24vw,340px)/.81 'Humane',Arial,sans-serif;text-transform:uppercase;color:var(--bone)}
+.tag{font-size:14px;text-transform:uppercase;color:var(--red)}
+.list{margin-top:110px;display:grid;gap:18px}
+.list .tag{margin-bottom:6px}
+.item{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:30px;background:var(--box);border:1px solid var(--box-line);border-radius:8px;text-decoration:none;color:inherit;transition:border-color .4s}
+.item:hover{border-color:rgba(242,238,230,.35)}
+.item small{display:block;font-size:12px;text-transform:uppercase;color:var(--grey);margin-bottom:10px}
+.item h2{font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;letter-spacing:-.48px;color:var(--bone)}
+.item p{margin-top:12px;max-width:560px}
+.go{font:400 16px/1.1 'IBM Plex Mono',monospace;text-transform:uppercase;background:var(--btn);color:var(--black);padding:18px 40px;border-radius:56px;white-space:nowrap;transition:background-color .45s,color .45s}
+.item:hover .go{background:var(--grey);color:var(--bone)}
+@media(max-width:700px){.item{grid-template-columns:1fr}.go{justify-self:start}}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--grey)}
 </style>
 </head>
 <body>
-<header><div class="wrap"><span>Jackie Miller / Work</span><a href="https://jackiemiller.co">jackiemiller.co ↗</a></div></header>
+<header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="https://jackiemiller.co/#contact">+ Let's talk</a></div></header>
 <main><div class="wrap">
-  <span class="tag">[ Case studies ]</span>
-  <h1>Don't read about it.<br>Try it.</h1>
-  <p class="lede">Each one is a working version you can use right in your browser.</p>
+  <div class="top">
+    <p class="kicker"><span>Jackie Miller / Houston, TX</span>Working case studies</p>
+    <h1>Try it.</h1>
+    <p>Don't read about it. Each one is a working version you can use right in your browser.</p>
+  </div>
   <div class="list">
+    <span class="tag">/ Case studies</span>
     <a class="item" href="/pi-case-assistant/">
-      <span class="n">01</span>
-      <div><h2>Private AI for a law firm</h2><p>A personal injury firm's assistant that answers from its own case files, on its own computer.</p></div>
-      <span class="go">Try it →</span>
+      <div><small>01 / Personal injury law</small><h2>Private AI for a law firm</h2><p>An assistant that answers from the firm's own case files, on the firm's own computer. No client file ever goes to an AI company.</p></div>
+      <span class="go">Try it</span>
     </a>
   </div>
 </div></main>
-<footer><div class="wrap">© Jackie Miller · Curiosity Inc.</div></footer>
+<footer><div class="wrap">© 2026, Jackie Miller. All Rights Reserved.</div></footer>
 </body>
 </html>
