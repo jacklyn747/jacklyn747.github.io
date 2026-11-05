@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lash Radar · Jackie Miller</title>
+<meta name="description" content="Case study: a phone app for Houston lash artists with trends, studio tools and Texas rules in one place, built for The Lash Collaboration.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Humane';src:url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802a7_Humane-Regular.ttf') format('truetype');font-display:swap}
+:root{--black:#0A0A0A;--bone:#F2EEE6;--text:#CFCAC2;--red:#B5121B;--grey:#8a8a8a;--btn:#e9e9e9;--box-line:rgba(230,230,230,.1);--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black) url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802bb_Group%2010268.png') 50% 50%/cover repeat-y;color:var(--text);font:400 16px/1.45 'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;position:relative;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:4px;transform:translateX(-50%);border-left:1px solid var(--line);border-right:1px solid var(--line);pointer-events:none}
+@media(max-width:479px){body:before{display:none}}
+body>*{position:relative;z-index:1}
+.wrap{max-width:1358px;margin:0 auto;padding:0 20px;width:100%}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+header a{font:400 20px 'Bebas Neue',sans-serif;letter-spacing:-.32px;color:var(--bone);text-decoration:none;transition:color .4s}
+header a:hover{color:var(--text)}
+main{flex:1;padding:72px 0 120px}
+.top{text-align:center;display:grid;justify-items:center;gap:26px}
+.kicker{font-size:14px;font-weight:500;letter-spacing:-.48px;text-transform:uppercase;color:var(--bone);line-height:1.05}
+.kicker span{display:block;font-weight:400;color:var(--text);margin-bottom:6px}
+h1{font:400 clamp(110px,18vw,260px)/.81 'Humane',Arial,sans-serif;text-transform:uppercase;color:var(--bone)}
+.lede{max-width:620px}
+.tag{font-size:14px;text-transform:uppercase;color:var(--red)}
+.btn{display:inline-block;font:400 16px/1.1 'IBM Plex Mono',monospace;text-transform:uppercase;background:var(--btn);color:var(--black);padding:18px 40px;border-radius:56px;text-decoration:none;white-space:nowrap;transition:background-color .45s,color .45s}
+.btn:hover{background:var(--grey);color:var(--bone)}
+.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(242,238,230,.35)}
+.btn.ghost:hover{border-color:var(--bone)}
+.demo{margin-top:100px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:60px;align-items:center}
+.demo h2,.sec h2{font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;letter-spacing:-.48px;color:var(--bone);margin-top:10px}
+.demo p{margin-top:16px;max-width:520px}
+.tabs{margin-top:28px;display:grid;gap:12px;max-width:520px}
+.tabs div{padding:16px 18px;background:#1c1c1c;border:1px solid var(--box-line);border-radius:8px}
+.tabs b{display:block;font:400 22px/1 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.2px;margin-bottom:6px}
+.actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.phone{width:390px;height:780px;border-radius:44px;border:10px solid #1c1c1c;box-shadow:0 0 0 1px var(--box-line),0 30px 80px rgba(0,0,0,.6);overflow:hidden;background:#0D0D0E}
+.phone iframe{width:100%;height:100%;border:0;display:block}
+.sec{margin-top:120px}
+.sec>p{margin-top:16px;max-width:640px}
+.steps{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.step{padding:30px;background:#1c1c1c;border:1px solid var(--box-line);border-radius:8px}
+.step small{display:block;font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.step h3{font:400 32px/.95 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.3px}
+.step p{margin-top:12px}
+.end{margin-top:120px;text-align:center;display:grid;justify-items:center;gap:22px}
+.fine{margin-top:60px;font-size:13px;color:var(--grey);max-width:720px}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--grey)}
+@media(max-width:960px){.demo{grid-template-columns:1fr}.phone{justify-self:center}}
+@media(max-width:479px){.phone{width:100%;height:680px;border-radius:32px;border-width:8px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
+<main><div class="wrap">
+  <div class="top">
+    <p class="kicker"><span>Case study 02 / Beauty</span>A studio app for lash artists</p>
+    <h1>Lash Radar</h1>
+    <p class="lede">Trends, studio math and Texas rules in one app, built for the phone that sits next to the lash chair. Made for The Lash Collaboration, Kim and Bri's lash studio in Houston.</p>
+  </div>
+
+  <section class="demo">
+    <div>
+      <span class="tag">/ The demo</span>
+      <h2>Four tabs. One for each job.</h2>
+      <p>This is the working prototype. Tap around in the phone, or open it on your own phone and add it to your home screen.</p>
+      <div class="tabs">
+        <div><b>Trend Radar</b>What clients are asking for, with a scope check on every trend and a how-to for the ones worth offering.</div>
+        <div><b>Station</b>Lash weight math, glue cure and freshness, cost per set, and a reaction triage that sorts symptoms and tells you who to send the client to.</div>
+        <div><b>TDLR Vault</b>A daily sanitation checklist, a safety data sheet binder, and a scope-of-practice chart, each tied to the Texas rule behind it.</div>
+        <div><b>Mapper</b>Map curl and diameter zone by zone on a drawn eye, and pick fiber colors for a client's eye color and skin undertone.</div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="app/">Open the demo</a>
+      </div>
+    </div>
+    <div class="phone"><iframe src="app/" title="Lash Radar demo" loading="lazy"></iframe></div>
+  </section>
+
+  <section class="sec">
+    <span class="tag">/ / The decisions</span>
+    <h2>What I chose, and why.</h2>
+    <p>A tool for licensed professionals has to earn trust before it earns screen time. These are the calls that shaped it.</p>
+    <div class="steps">
+      <div class="step"><small>01 / The phone in the chair</small><h3>Built for one hand and a full appointment.</h3><p>Lash artists work with both hands on a client. Everything is sized for a phone, installs to the home screen like an app, and keeps each job one tap away in its own tab.</p></div>
+      <div class="step"><small>02 / Rules from the source</small><h3>No rule written from memory.</h3><p>Every Texas rule in the Vault links to TDLR or the Texas Administrative Code and shows when it was checked. Anything the sources don't settle is flagged for a direct answer from TDLR or an attorney.</p></div>
+      <div class="step"><small>03 / Scope on every trend</small><h3>A trend can be popular and still off limits.</h3><p>Lash lifts and tints are outside the Texas eyelash extension license. Any trend that touches them carries a warning and links to the rule, so nobody books a service their license doesn't cover.</p></div>
+      <div class="step"><small>04 / Fake data says so</small><h3>Demo numbers wear a label.</h3><p>The trend figures are placeholders until a real data source is connected. The app says so wherever they appear, so nobody mistakes a mockup for market research.</p></div>
+      <div class="step"><small>05 / Triage, not diagnosis</small><h3>It sorts and refers out.</h3><p>Eye reactions can't be undone. The triage tool helps an artist decide how urgent a reaction looks and who to send the client to. It never diagnoses and never suggests medication.</p></div>
+      <div class="step"><small>06 / Their craft, their call</small><h3>The expertise belongs to the artists.</h3><p>Application steps and technique notes are drafts for Kim and Bri to rewrite in their own words. Their courses stay out of this public version, and nothing in the app claims to be state approved training.</p></div>
+      <div class="step"><small>07 / Honest gaps</small><h3>What it doesn't do yet.</h3><p>It needs an internet connection, and checklists and logs save to each phone without syncing between artists. Both are on the list if the studio takes it into daily use.</p></div>
+    </div>
+  </section>
+
+  <section class="end">
+    <span class="tag">/ / / Let's talk</span>
+    <h2 style="font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;color:var(--bone)">Your craft, in an app your team will use.</h2>
+    <a class="btn" href="https://jackiemiller.co/#contact">Start a conversation</a>
+    <p class="fine">Trend figures in the demo are sample data. Technique content is a draft for review, not instruction. Nothing here is legal advice or state approved training. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
+  </section>
+</div></main>
+<footer><div class="wrap">© 2026, Jackie Miller. All Rights Reserved.</div></footer>
+</body>
+</html>
