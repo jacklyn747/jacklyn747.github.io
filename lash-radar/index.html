@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lash Radar · Jackie Miller</title>
-<meta name="description" content="Case study: a phone app for Houston lash artists with trends, studio tools and Texas rules in one place, built for The Lash Collaboration.">
+<meta name="description" content="Case study: a phone app for Houston lash artists that watches search trends and turns them into training, with studio tools and Texas rules in one place. Built for The Lash Collaboration.">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'Humane';src:url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802a7_Humane-Regular.ttf') format('truetype');font-display:swap}
@@ -45,6 +45,12 @@ h1{font:400 clamp(110px,18vw,260px)/.81 'Humane',Arial,sans-serif;text-transform
 .step small{display:block;font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--red);margin-bottom:12px}
 .step h3{font:400 32px/.95 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.3px}
 .step p{margin-top:12px}
+.feature{margin-top:40px;padding:40px;background:#1c1c1c;border:1px solid rgba(181,18,27,.45);border-radius:8px}
+.feature small{display:block;font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.feature h3{font:400 clamp(34px,4vw,56px)/.92 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.4px;max-width:900px}
+.feature p{margin-top:16px;max-width:720px}
+.feature .note{font-size:14px;color:var(--grey)}
+@media(max-width:479px){.feature{padding:26px}}
 .end{margin-top:120px;text-align:center;display:grid;justify-items:center;gap:22px}
 .fine{margin-top:60px;font-size:13px;color:var(--grey);max-width:720px}
 footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--grey)}
@@ -58,7 +64,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
   <div class="top">
     <p class="kicker"><span>Case study 02 / Beauty</span>A studio app for lash artists</p>
     <h1>Lash Radar</h1>
-    <p class="lede">Trends, studio math and Texas rules in one app, built for the phone that sits next to the lash chair. Made for The Lash Collaboration, Kim and Bri's lash studio in Houston.</p>
+    <p class="lede">An app that watches what clients are searching for and turns it into training. Trends, studio math and Texas rules in one place, built for the phone that sits next to the lash chair. Made for The Lash Collaboration, Kim and Bri's lash studio in Houston.</p>
   </div>
 
   <section class="demo">
@@ -67,7 +73,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
       <h2>Four tabs. One for each job.</h2>
       <p>This is the working prototype. Tap around in the phone, or open it on your own phone and add it to your home screen.</p>
       <div class="tabs">
-        <div><b>Trend Radar</b>What clients are asking for, with a scope check on every trend and a how-to for the ones worth offering.</div>
+        <div><b>Trend Radar</b>What clients are searching for, ranked by how fast it's rising. Each trend opens a how-to, a scope check, and what it means for the business.</div>
         <div><b>Station</b>Lash weight math, glue cure and freshness, cost per set, and a reaction triage that sorts symptoms and tells you who to send the client to.</div>
         <div><b>TDLR Vault</b>A daily sanitation checklist, a safety data sheet binder, and a scope-of-practice chart, each tied to the Texas rule behind it.</div>
         <div><b>Mapper</b>Map curl and diameter zone by zone on a drawn eye, and pick fiber colors for a client's eye color and skin undertone.</div>
@@ -83,11 +89,18 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
     <span class="tag">/ / The decisions</span>
     <h2>What I chose, and why.</h2>
     <p>A tool for licensed professionals has to earn trust before it earns screen time. These are the calls that shaped it.</p>
+    <div class="feature">
+      <small>The core idea / Trends drive the training</small>
+      <h3>When clients start searching for a look, the training is already waiting.</h3>
+      <p>Most lash training is written once and goes stale. Lash Radar connects to Google search data through the studio's own Google account and watches what people search for in the lash world. When a look starts rising, it shows up on the radar with its growth rate, a scope check, and a tutorial drafted for that trend.</p>
+      <p>The artists review the draft and make it their own, so the studio is teaching a trend while it's still climbing instead of after it peaks.</p>
+      <p class="note">In this public demo the trends are sample data, labeled that way in the app. The live version runs on the studio's own Google account, so nothing here is connected to real search data.</p>
+    </div>
     <div class="steps">
       <div class="step"><small>01 / The phone in the chair</small><h3>Built for one hand and a full appointment.</h3><p>Lash artists work with both hands on a client. Everything is sized for a phone, installs to the home screen like an app, and keeps each job one tap away in its own tab.</p></div>
       <div class="step"><small>02 / Rules from the source</small><h3>No rule written from memory.</h3><p>Every Texas rule in the Vault links to TDLR or the Texas Administrative Code and shows when it was checked. Anything the sources don't settle is flagged for a direct answer from TDLR or an attorney.</p></div>
       <div class="step"><small>03 / Scope on every trend</small><h3>A trend can be popular and still off limits.</h3><p>Lash lifts and tints are outside the Texas eyelash extension license. Any trend that touches them carries a warning and links to the rule, so nobody books a service their license doesn't cover.</p></div>
-      <div class="step"><small>04 / Fake data says so</small><h3>Demo numbers wear a label.</h3><p>The trend figures are placeholders until a real data source is connected. The app says so wherever they appear, so nobody mistakes a mockup for market research.</p></div>
+      <div class="step"><small>04 / Sample data says so</small><h3>Demo numbers wear a label.</h3><p>Until the studio's Google account is connected, the trend figures are samples. The app says so wherever they appear, so nobody mistakes a mockup for market research.</p></div>
       <div class="step"><small>05 / Triage, not diagnosis</small><h3>It sorts and refers out.</h3><p>Eye reactions can't be undone. The triage tool helps an artist decide how urgent a reaction looks and who to send the client to. It never diagnoses and never suggests medication.</p></div>
       <div class="step"><small>06 / Their craft, their call</small><h3>The expertise belongs to the artists.</h3><p>Application steps and technique notes are drafts for Kim and Bri to rewrite in their own words. Their courses stay out of this public version, and nothing in the app claims to be state approved training.</p></div>
       <div class="step"><small>07 / Honest gaps</small><h3>What it doesn't do yet.</h3><p>It needs an internet connection, and checklists and logs save to each phone without syncing between artists. Both are on the list if the studio takes it into daily use.</p></div>
@@ -98,7 +111,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
     <span class="tag">/ / / Let's talk</span>
     <h2 style="font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;color:var(--bone)">Your craft, in an app your team will use.</h2>
     <a class="btn" href="https://jackiemiller.co/#contact">Start a conversation</a>
-    <p class="fine">Trend figures in the demo are sample data. Technique content is a draft for review, not instruction. Nothing here is legal advice or state approved training. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
+    <p class="fine">Trend figures in the demo are sample data, not live search results. Technique content is a draft for review, not instruction. Nothing here is legal advice or state approved training. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
   </section>
 </div></main>
 <footer><div class="wrap">© 2026, Jackie Miller. All Rights Reserved.</div></footer>
