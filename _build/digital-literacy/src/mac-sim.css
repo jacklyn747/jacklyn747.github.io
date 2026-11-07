@@ -1,0 +1,246 @@
+/* ─────────────────────────────────────────────────────────────
+   Mac-style desktop simulation — the Digital Literacy capstone.
+   Rebuilt clean (no Apple trademarked assets): generic menu bar,
+   dock, Finder-style windows, Trash, traffic-light window controls.
+   Uses the viewer's system font so it renders as their real UI font.
+   ───────────────────────────────────────────────────────────── */
+
+.macsim {
+  --bar: rgba(28, 26, 34, 0.55);
+  --win: #f6f5f7;
+  --win-head: #e9e7ec;
+  --text: #1d1d1f;
+  --text-soft: #6b6b70;
+  --accent: #3a6df0;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 10px;
+  background:
+    radial-gradient(130% 120% at 50% -12%, #3b3552 0%, #211f2b 52%, #0c0b11 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  user-select: none;
+  touch-action: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5) inset;
+  cursor: default;
+}
+/* subtle wallpaper glow */
+.macsim::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 42% at 50% 30%, rgba(150, 130, 220, 0.16), transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Menu bar ── */
+.mac-menubar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 26px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 0 14px;
+  background: var(--bar);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  font-size: 12.5px;
+  line-height: 1;
+}
+.mac-menubar .mark {
+  width: 13px; height: 13px;
+  display: inline-block;
+  border-radius: 3px;
+  background: #CFCAC2;
+}
+.mac-menubar .app { font-weight: 700; letter-spacing: 0.01em; }
+.mac-menubar .menus { display: flex; gap: 16px; color: rgba(255,255,255,0.86); font-weight: 400; }
+.mac-menubar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,0.9); }
+.mac-menubar .right svg { display: block; }
+.mac-menubar .clock { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+
+/* ── Desktop files ── */
+.mac-file {
+  position: absolute;
+  width: 78px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 4px;
+  border-radius: 8px;
+  cursor: default;
+}
+.mac-file.sel { background: rgba(120, 130, 220, 0.28); }
+.mac-file.dragging { z-index: 500; opacity: 0.92; }
+.mac-file .ico {
+  width: 52px; height: 62px;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.35));
+}
+.mac-file .nm {
+  font-size: 11.5px;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  word-break: break-word;
+}
+.mac-file.sel .nm { background: rgba(58, 109, 240, 0.9); border-radius: 4px; padding: 1px 5px; }
+
+/* ── Windows ── */
+.mac-window {
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  background: var(--win);
+  color: var(--text);
+  border-radius: 11px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.28),
+    0 26px 60px -12px rgba(0, 0, 0, 0.55);
+}
+.mac-titlebar {
+  height: 38px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  background: var(--win-head);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+  cursor: default;
+}
+.mac-lights { display: flex; align-items: center; gap: 8px; }
+.light { width: 12px; height: 12px; border-radius: 50%; display: grid; place-items: center; }
+.light svg { width: 7px; height: 7px; opacity: 0; stroke: rgba(0,0,0,0.5); stroke-width: 1.6; fill: none; }
+.mac-lights:hover .light svg { opacity: 1; }
+.light.red { background: #ff5f57; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12) inset; }
+.light.yellow { background: #febc2e; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12) inset; }
+.light.green { background: #28c840; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12) inset; }
+.mac-title { flex: 1; text-align: center; font-size: 13px; font-weight: 600; color: var(--text-soft); margin-right: 44px; }
+.mac-winbody { flex: 1; overflow: auto; }
+
+/* Text-document window */
+.doc { padding: 26px 30px; font-size: 14px; line-height: 1.62; color: var(--text); }
+.doc h3 { font-size: 17px; margin: 0 0 12px; }
+.doc p { margin: 0 0 12px; }
+.doc .muted { color: var(--text-soft); }
+
+/* Finder window */
+.finder { display: flex; height: 100%; }
+.finder .side { width: 150px; flex: 0 0 auto; background: #ececf0; border-right: 0.5px solid rgba(0,0,0,0.1); padding: 12px 8px; }
+.finder .side .grp { font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #9a9aa0; padding: 8px 8px 4px; }
+.finder .side .row { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 6px; font-size: 12.5px; color: #303036; }
+.finder .side .row.on { background: rgba(58,109,240,0.14); color: var(--accent); }
+.finder .side .row .d { width: 15px; height: 15px; border-radius: 4px; background: #c3c3cb; }
+.finder .list { flex: 1; padding: 12px; display: grid; grid-template-columns: repeat(auto-fill, 92px); gap: 14px 8px; align-content: start; background: #fff; }
+.finder .item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 6px 4px; border-radius: 8px; cursor: default; }
+.finder .item.sel { background: rgba(58,109,240,0.16); }
+.finder .item .ico { width: 46px; height: 54px; }
+.finder .item .nm { font-size: 11.5px; text-align: center; color: #2b2b30; line-height: 1.2; }
+
+/* PDF-ish window */
+.pdf { background: #52525a; height: 100%; padding: 22px; display: grid; place-items: start center; overflow: auto; }
+.pdf .page { width: 100%; max-width: 460px; background: #fff; border-radius: 3px; box-shadow: 0 6px 20px rgba(0,0,0,0.3); padding: 40px 44px; color: #1d1d1f; }
+.pdf .page h2 { font-size: 22px; margin: 0 0 4px; }
+.pdf .page .role { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8a90; margin-bottom: 20px; }
+.pdf .page .ln { height: 8px; border-radius: 3px; background: #e6e6ea; margin: 9px 0; }
+.pdf .page .ln.s { width: 60%; }
+
+/* Calendar window */
+.cal { padding: 20px 22px; }
+.cal .mo { font-size: 20px; font-weight: 700; margin: 0 0 14px; }
+.cal .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal .dow { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-soft); text-align: center; padding-bottom: 4px; }
+.cal .day { aspect-ratio: 1; display: grid; place-items: center; font-size: 12.5px; color: #2b2b30; border-radius: 7px; }
+.cal .day.dim { color: #c2c2c8; }
+.cal .day.today { background: var(--accent); color: #fff; font-weight: 700; }
+
+/* Trash window */
+.trashw { padding: 0; height: 100%; display: flex; flex-direction: column; }
+.trashw .bar { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-bottom: 0.5px solid rgba(0,0,0,0.1); font-size: 12.5px; color: var(--text-soft); }
+.trashw .empty-btn { font-size: 12px; color: var(--accent); cursor: pointer; padding: 4px 10px; border-radius: 6px; }
+.trashw .empty-btn:hover { background: rgba(58,109,240,0.12); }
+.trashw .list { flex: 1; padding: 14px; display: grid; grid-template-columns: repeat(auto-fill, 92px); gap: 14px 8px; align-content: start; }
+.trashw .none { padding: 40px; text-align: center; color: #a0a0a6; font-size: 13px; }
+
+/* ── Dock ── */
+.mac-dock {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: rgba(60, 58, 72, 0.42);
+  border: 0.5px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+}
+.dock-item {
+  position: relative;
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: default;
+  transition: transform 140ms ease;
+}
+.dock-item:hover { transform: translateY(-8px) scale(1.08); }
+.dock-item img, .dock-item .glyph { width: 46px; height: 46px; display: block; }
+.dock-item .run { position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.85); }
+.dock-sep { width: 0.5px; height: 40px; background: rgba(255,255,255,0.28); margin: 0 3px; align-self: center; }
+.mac-dock.trash-hot .dock-item.trash { transform: translateY(-8px) scale(1.14); }
+.mac-dock.trash-hot .dock-item.trash::after {
+  content: ""; position: absolute; inset: -3px; border-radius: 14px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.85);
+}
+
+/* hint chip shown over the sim */
+.mac-hint {
+  position: absolute;
+  top: 34px; left: 50%; transform: translateX(-50%);
+  z-index: 80;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.82);
+  background: rgba(20, 18, 26, 0.5);
+  border: 0.5px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
+  padding: 6px 13px;
+  border-radius: 999px;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock-item { transition: none; }
+}
+
+/* Course-mode editable note (capstone typing task) */
+.macsim .doc .notes-input {
+  margin-top: 12px;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1.5px solid #cfcfd6;
+  background: #fff;
+  font-size: 16px;
+  color: #23232a;
+  outline: none;
+}
+.macsim .doc .notes-input:focus { border-color: #4a90e2; box-shadow: 0 0 0 2px rgba(74,144,226,0.25); }
+.macsim .doc .notes-input { box-sizing: border-box; }
