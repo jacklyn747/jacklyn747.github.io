@@ -513,3 +513,10 @@
 }
 /* long stages scroll inside the tablet instead of clipping */
 .crs-body { overflow-y: auto; }
+
+/* Reveal cards: title, prompt and meaning each on their own line */
+.crs-choice { display: flex; flex-direction: column; align-items: flex-start; }
+.crs-choice .glyph, .crs-choice .ct, .crs-choice .cs, .crs-choice .reveal { display: block; }
+.crs-choice .ct { line-height: 1; }
+.crs-choice .cs:empty { display: none; }
+.crs-choice .reveal.long { margin-top: 10px; }
