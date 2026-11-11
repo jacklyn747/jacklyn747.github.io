@@ -108,6 +108,10 @@ export default function App() {
 function Shell({ children }) {
   return (
     <div className="app">
+      {/* Same exit as the other work.jackiemiller.co case studies. _top leaves an iframe embed too. */}
+      <a className="exit" href="https://work.jackiemiller.co/" target="_top">
+        ← Exit
+      </a>
       {children}
       <footer className="footer">Built by Jackie Miller</footer>
     </div>

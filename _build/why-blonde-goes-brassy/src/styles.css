@@ -157,6 +157,29 @@ strong {
   padding: var(--s4) var(--s3);
 }
 
+/* ---------- Exit (top left, level with the progress dots) ---------- */
+.app {
+  position: relative;
+}
+.exit {
+  position: absolute;
+  top: calc(var(--s3) - 10px);
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  font-family: var(--mono);
+  font-size: var(--t-label);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+.exit:hover {
+  color: var(--ink);
+}
+
 /* ---------- Progress ---------- */
 .progress {
   display: flex;
