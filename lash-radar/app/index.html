@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LASH RADAR</title>
-<meta name="description" content="Studio assistant and trend feed for lash artists. Prototype by Jackie Miller for The Lash Collaboration.">
+<meta name="description" content="Studio assistant and trend feed for lash artists. Prototype by Jackie Miller.">
 <meta name="theme-color" content="#0D0D0E">
 <meta name="color-scheme" content="dark">
 <meta name="mobile-web-app-capable" content="yes">
@@ -108,7 +108,7 @@
     </div>
     <div id="filters" class="no-scrollbar -mx-4 px-4 mt-3 flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Trend categories"></div>
     <div id="trendList" class="mt-4 space-y-3"></div>
-    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for Kim &amp; Bri to edit. Scope badges link to TDLR sources in the Vault tab.</p>
+    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for your studio to edit. Scope badges link to official sources in the Vault tab.</p>
   </section>
 
   <!-- TAB 2: STATION -->
@@ -232,7 +232,7 @@
   <!-- TAB 3: VAULT -->
   <section id="view-vault" hidden aria-labelledby="t-vault">
     <div class="flex items-baseline justify-between">
-      <h2 id="t-vault" class="font-serif text-2xl">TDLR Vault</h2>
+      <h2 id="t-vault" class="font-serif text-2xl">Rules Vault</h2>
       <span class="text-[11px] text-mute">Texas compliance</span>
     </div>
 
@@ -250,7 +250,7 @@
       <div class="min-w-0">
         <p class="text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">Audit preparedness</p>
         <p id="scoreLabel" class="font-serif text-lg mt-1 leading-snug"></p>
-        <p class="text-[11px] text-mute mt-1">Today's self-check. Not a TDLR inspection score. Resets daily.</p>
+        <p class="text-[11px] text-mute mt-1">Today's self-check. Not an official inspection score. Resets daily.</p>
       </div>
     </div>
 
@@ -272,7 +272,7 @@
 
     <div class="mt-3 rounded-2xl bg-card border border-line p-4">
       <h3 class="font-serif text-lg">Scope-of-Practice Matrix</h3>
-      <p class="text-[12px] text-mute mt-0.5">Occ. Code ch. 1603 and 16 TAC ch. 83. Checked 10/26/2026.</p>
+      <p class="text-[12px] text-mute mt-0.5">Based on Texas licensing rules. Checked 10/26/2026.</p>
       <div class="mt-3 -mx-4 overflow-x-auto no-scrollbar">
         <table class="min-w-[520px] w-full text-[13px] mx-4">
           <thead>
@@ -286,7 +286,7 @@
           <tbody id="scopeRows" class="divide-y divide-line"></tbody>
         </table>
       </div>
-      <p class="mt-3 text-[11px] leading-relaxed text-mute">* Not confirmed on TDLR's esthetician or cosmetology scope pages. For lifts and tints, a 2023 House bill analysis (HB 3029) says they need an esthetician or cosmetology license. Confirm with TDLR (512-463-6599) before offering or teaching.</p>
+      <p class="mt-3 text-[11px] leading-relaxed text-mute">* Not confirmed on the state's esthetician or cosmetology scope pages. For lifts and tints, a 2023 House bill analysis says they need an esthetician or cosmetology license. Confirm with the state before offering or teaching.</p>
     </div>
 
     <div class="mt-3 rounded-2xl border border-line p-4">
@@ -356,7 +356,7 @@
         </div>
       </div>
       <svg id="fiberStrip" viewBox="0 0 300 44" class="mt-4 w-full h-11" aria-hidden="true"></svg>
-      <p class="mt-3 text-[11px] text-mute leading-relaxed">The eye diagram above uses this blend. Suggestions are a starting logic for Kim &amp; Bri to replace with their own.</p>
+      <p class="mt-3 text-[11px] text-mute leading-relaxed">The eye diagram above uses this blend. Suggestions are a starting logic for your studio to replace with its own.</p>
     </div>
   </section>
 
@@ -367,7 +367,7 @@
   <div class="max-w-2xl mx-auto grid grid-cols-4" role="tablist">
     <button type="button" data-tab="radar" role="tab" class="tab-btn h-16 flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"><i data-lucide="radar" class="w-5 h-5"></i>Trend Radar</button>
     <button type="button" data-tab="station" role="tab" class="tab-btn h-16 flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"><i data-lucide="calculator" class="w-5 h-5"></i>Station</button>
-    <button type="button" data-tab="vault" role="tab" class="tab-btn h-16 flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"><i data-lucide="shield-check" class="w-5 h-5"></i>TDLR Vault</button>
+    <button type="button" data-tab="vault" role="tab" class="tab-btn h-16 flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"><i data-lucide="shield-check" class="w-5 h-5"></i>Rules Vault</button>
     <button type="button" data-tab="mapper" role="tab" class="tab-btn h-16 flex flex-col items-center justify-center gap-1 text-[11px] font-semibold"><i data-lucide="eye" class="w-5 h-5"></i>Mapper</button>
   </div>
 </nav>
@@ -409,13 +409,13 @@ function toast(msg) { const t = $('#toast'); t.textContent = msg; t.style.opacit
 
 /* ---------- sources ---------- */
 const SRC = {
-  scope: { label: 'TDLR: Eyelash Extension Specialist scope of practice', url: 'https://www.tdlr.texas.gov/barbering-and-cosmetology/scope-of-practice/eyelash-extension.htm' },
-  who: { label: 'TDLR: Who regulates what', url: 'https://www.tdlr.texas.gov/barbering-and-cosmetology/who-regulates-what.htm' },
-  r115: { label: '16 TAC §83.115: Eyelash extension health & safety (amended 1/1/2023)', url: 'https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-83-115' },
-  r102: { label: '16 TAC §83.102: General health & safety (amended 1/1/2023)', url: 'https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-83-102' },
-  hb3029: { label: 'HB 3029 (88R) bill analysis, 2023: lift & tint licensing', url: 'https://capitol.texas.gov/tlodocs/88R/analysis/html/HB03029H.htm' },
-  teach: { label: 'TDLR: Teachers need the license for what they teach (2021)', url: 'https://www.tdlr.texas.gov/news/2021/09/29/teacher-training-and-professional-development-at-licensed-schools' },
-  osha: { label: 'OSHA Hazard Communication: Safety Data Sheets (29 CFR 1910.1200)', url: 'https://www.osha.gov/hazcom' }
+  scope: { label: 'Official source: Eyelash extension scope of practice', url: 'https://www.tdlr.texas.gov/barbering-and-cosmetology/scope-of-practice/eyelash-extension.htm' },
+  who: { label: 'Official source: Who licenses which services', url: 'https://www.tdlr.texas.gov/barbering-and-cosmetology/who-regulates-what.htm' },
+  r115: { label: 'Official source: Eyelash extension health and safety rule', url: 'https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-83-115' },
+  r102: { label: 'Official source: General health and safety rule', url: 'https://www.law.cornell.edu/regulations/texas/16-Tex-Admin-Code-SS-83-102' },
+  hb3029: { label: 'Official source: 2023 bill analysis on lift and tint licensing', url: 'https://capitol.texas.gov/tlodocs/88R/analysis/html/HB03029H.htm' },
+  teach: { label: 'Official source: Teachers need the license for what they teach', url: 'https://www.tdlr.texas.gov/news/2021/09/29/teacher-training-and-professional-development-at-licensed-schools' },
+  osha: { label: 'Official source: Safety Data Sheets', url: 'https://www.osha.gov/hazcom' }
 };
 
 /* ---------- trend data (DEMO) ---------- */
@@ -503,8 +503,8 @@ function sync() {
 /* ---------- radar ---------- */
 function scopeBadge(scope) {
   return scope === 'ok'
-    ? '<span class="inline-flex items-center gap-1 rounded-md border border-live/30 bg-live/10 text-live px-2 py-1 text-[10px] font-semibold tracking-wide">[TDLR OK: Eyelash Specialist]</span>'
-    : '<span class="inline-flex items-center gap-1 rounded-md border border-amber-400/30 bg-amber-400/10 text-amber-300 px-2 py-1 text-[10px] font-semibold tracking-wide">[TDLR Warning: Esthetician/Cosmo Required]</span>';
+    ? '<span class="inline-flex items-center gap-1 rounded-md border border-live/30 bg-live/10 text-live px-2 py-1 text-[10px] font-semibold tracking-wide">[Scope OK: Eyelash Specialist]</span>'
+    : '<span class="inline-flex items-center gap-1 rounded-md border border-amber-400/30 bg-amber-400/10 text-amber-300 px-2 py-1 text-[10px] font-semibold tracking-wide">[Scope Warning: Esthetician/Cosmo Required]</span>';
 }
 function renderFilters() {
   $('#filters').innerHTML = Object.entries(CATS).map(([k, v]) =>
@@ -534,8 +534,8 @@ function openTrend(id) {
   const scopeNote = t.scope === 'warn' ? `
     <div class="mt-4 rounded-xl border border-amber-400/30 bg-amber-400/5 p-3.5 text-[13px] leading-relaxed">
       <p class="flex items-center gap-1.5 font-semibold text-amber-300"><i data-lucide="alert-triangle" class="w-4 h-4"></i>Scope check</p>
-      <p class="mt-1.5 text-fg/90">The Texas eyelash extension specialist license covers extensions only. TDLR lists hair coloring and waving outside that license, and a 2023 House bill analysis says lifts and tints need an esthetician or cosmetology license. Teachers need the license for what they teach. Confirm with TDLR before offering or teaching this.</p>
-      <p class="mt-2 space-x-3"><a class="text-bronze underline underline-offset-2" href="${SRC.scope.url}" target="_blank" rel="noopener">TDLR scope</a><a class="text-bronze underline underline-offset-2" href="${SRC.hb3029.url}" target="_blank" rel="noopener">HB 3029 analysis</a></p>
+      <p class="mt-1.5 text-fg/90">The Texas eyelash extension specialist license covers extensions only. State rules list hair coloring and waving outside that license, and a 2023 House bill analysis says lifts and tints need an esthetician or cosmetology license. Teachers need the license for what they teach. Confirm with the state before offering or teaching this.</p>
+      <p class="mt-2 space-x-3"><a class="text-bronze underline underline-offset-2" href="${SRC.scope.url}" target="_blank" rel="noopener">Official source: scope</a><a class="text-bronze underline underline-offset-2" href="${SRC.hb3029.url}" target="_blank" rel="noopener">Official source: lifts and tints</a></p>
     </div>` : '';
   openSheet(CATS[t.cat] + ' · +' + t.vel + '%', t.kw, `
     <div>${scopeBadge(t.scope)}</div>
@@ -547,7 +547,7 @@ function openTrend(id) {
     <h3 class="mt-6 text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">Consumer Shift</h3>
     <p class="mt-2 text-[14px] leading-relaxed text-fg/90">${esc(t.shift)}</p>
     ${courseLinks(t.id)}
-    <p class="mt-6 pt-4 border-t border-line text-[11px] text-mute leading-relaxed">Draft content for Kim &amp; Bri to review. Velocity is demo data.</p>`);
+    <p class="mt-6 pt-4 border-t border-line text-[11px] text-mute leading-relaxed">Draft content for your studio to review. Velocity is demo data.</p>`);
 }
 
 /* Courses are not part of the public demo. */
@@ -614,7 +614,7 @@ function showTool(tool) {
 /* ---------- Tool A: weight ---------- */
 // Teaching model: capacity = natural lash cross-section x reference length.
 // Fan load = n fibers x extension cross-section x extension length. V = pi * r^2 * l.
-const L_REF = 12; // mm. Calibration constant for Kim & Bri to set.
+const L_REF = 12; // mm. Calibration constant for your studio to set.
 const EXT_D = [0.03, 0.05, 0.07, 0.10, 0.12, 0.15];
 let wExt = 0.07;
 function initWeight() {
@@ -663,7 +663,7 @@ function calcWeight() {
         <p>Fan (${req}): ${(per * req).toFixed(4)} mm³</p>
         <p>Natural limit: π · ${rN.toFixed(3)}² · ${L_REF} = ${cap.toFixed(4)} mm³</p>
       </div>
-      <p class="mt-3 text-[11px] text-mute leading-relaxed">Teaching model, not a clinical standard. The ${L_REF}mm reference length is a calibration setting for Kim &amp; Bri.</p>
+      <p class="mt-3 text-[11px] text-mute leading-relaxed">Teaching model, not a clinical standard. The ${L_REF}mm reference length is a calibration setting for your studio.</p>
     </div>`;
   icons();
 }
@@ -786,7 +786,7 @@ function renderTriage() {
       <p class="mt-1.5 font-serif text-[16px] leading-relaxed">${esc(r.script)}</p>
       <h4 class="mt-4 text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">Protocol</h4>
       <ul class="mt-1.5 space-y-1.5">${r.proto.map(x => `<li class="flex gap-2 text-[13px]"><i data-lucide="check" class="w-4 h-4 text-bronze shrink-0 mt-0.5"></i><span>${esc(x)}</span></li>`).join('')}</ul>
-      <p class="mt-4 text-[11px] text-mute leading-relaxed">Not a diagnosis. Lash artists refer out; they don't diagnose or treat. TDLR rules bar servicing clients with inflamed or swollen skin or conjunctivitis in the service area (16 TAC §83.102).</p>
+      <p class="mt-4 text-[11px] text-mute leading-relaxed">Not a diagnosis. Lash artists refer out; they don't diagnose or treat. State rules bar servicing clients with inflamed or swollen skin or conjunctivitis in the service area.</p>
       <button type="button" id="triRestart" class="mt-4 w-full h-11 rounded-lg border border-line font-semibold">Start over</button>
     </div>`;
   icons();
@@ -808,16 +808,16 @@ function calcProfit() {
 
 /* ---------- Vault ---------- */
 const CHECKS = [
-  { t: 'Wash hands with soap and water before each client.', r: '§83.115' },
-  { t: 'Clean and disinfect tweezers, aspirators, and lash dryers after each client.', r: '§83.115' },
-  { t: 'Disinfect chair or bed and headrest after each client. Surfaces are non-porous or covered.', r: '§83.115' },
-  { t: 'Throw out single-use items: eye pads, tape, swabs, brushes, gloves, wipes.', r: '§83.115' },
-  { t: 'Fresh towels, headband, hair cap, gown, and spatulas for each client.', r: '§83.115' },
-  { t: 'Only properly labeled semi-permanent glue and remover, used per manufacturer instructions.', r: '§83.115' },
-  { t: 'Extensions stored in a sealed bag or covered container, clean and dry.', r: '§83.115' },
-  { t: 'Clean, disinfected items stored apart from soiled items.', r: '§83.102' },
-  { t: 'All products labeled per OSHA requirements.', r: '§83.102' },
-  { t: 'Floors cleaned and trash emptied today; bins washed or lined.', r: '§83.102' }
+  { t: 'Wash hands with soap and water before each client.' },
+  { t: 'Clean and disinfect tweezers, aspirators, and lash dryers after each client.' },
+  { t: 'Disinfect chair or bed and headrest after each client. Surfaces are non-porous or covered.' },
+  { t: 'Throw out single-use items: eye pads, tape, swabs, brushes, gloves, wipes.' },
+  { t: 'Fresh towels, headband, hair cap, gown, and spatulas for each client.' },
+  { t: 'Only properly labeled semi-permanent glue and remover, used per manufacturer instructions.' },
+  { t: 'Extensions stored in a sealed bag or covered container, clean and dry.' },
+  { t: 'Clean, disinfected items stored apart from soiled items.' },
+  { t: 'All products labeled per federal safety rules.' },
+  { t: 'Floors cleaned and trash emptied today; bins washed or lined.' }
 ];
 let checks = (() => { const s = store.get('checks', null); return s && s.date === todayKey() ? s.done : CHECKS.map(() => false); })();
 function renderChecks() {
@@ -825,7 +825,6 @@ function renderChecks() {
     <li><button type="button" data-check="${i}" aria-pressed="${checks[i]}" class="w-full flex items-start gap-3 px-4 py-3.5 text-left">
       <span class="mt-0.5 w-6 h-6 shrink-0 rounded-md border ${checks[i] ? 'bg-bronze border-bronze text-ink' : 'border-line text-transparent'} inline-flex items-center justify-center"><i data-lucide="check" class="w-4 h-4"></i></span>
       <span class="flex-1 text-[14px] leading-snug ${checks[i] ? 'text-mute line-through decoration-mute/50' : ''}">${esc(c.t)}</span>
-      <span class="shrink-0 text-[10px] text-mute border border-line rounded px-1.5 py-0.5 tabular-nums">${c.r}</span>
     </button></li>`).join('');
   const score = checks.filter(Boolean).length * 10;
   $('#scoreNum').textContent = score;
@@ -842,7 +841,7 @@ const SCOPE = [
   { s: 'Lash or brow tint', e: ['no', 'star', 'star'], src: 'hb3029' },
   { s: 'Facials, cleansing, beautifying treatments', e: ['no', 'yes', 'yes'], src: 'scope' },
   { s: 'Hair removal (tweezing, waxing)', e: ['no', 'star', 'star'], src: 'scope' },
-  { s: 'Teach it at a TDLR-licensed school', e: ['ext', 'own', 'own'], src: 'teach' }
+  { s: 'Teach it at a state-licensed school', e: ['ext', 'own', 'own'], src: 'teach' }
 ];
 function cell(v) {
   return {
@@ -863,7 +862,7 @@ function openSDS() {
   openSheet('SDS Binder', 'Lash Adhesive (Sample)', `
     <div class="rounded-xl border border-amber-400/30 bg-amber-400/5 p-3 text-[12.5px] leading-relaxed">
       <p class="font-semibold text-amber-300">Sample layout, not a real SDS.</p>
-      <p class="mt-1 text-fg/90">Inspectors need the manufacturer's actual sheet for each product. Open yours below. SDS rules come from OSHA's Hazard Communication standard, not TDLR.</p>
+      <p class="mt-1 text-fg/90">Inspectors need the manufacturer's actual sheet for each product. Open yours below. SDS rules come from federal workplace safety rules, not state licensing rules.</p>
     </div>
     <label class="mt-4 flex items-center justify-center gap-2 h-12 rounded-xl border border-dashed border-bronze/60 text-bronze font-semibold cursor-pointer">
       <i data-lucide="upload" class="w-4 h-4"></i>Open a manufacturer SDS (PDF)
@@ -878,7 +877,7 @@ function openSDS() {
       ${row('7. Handling & storage', 'Use with good ventilation. Keep the cap closed. Store cool and dry, away from light. Follow the maker\'s shelf life after opening.')}
       ${row('8. Exposure controls', 'Ventilation at the station. Nitrile gloves. Keep adhesive away from the client\'s eyes.')}
     </div>
-    <a class="mt-4 inline-flex items-center gap-1 text-[12px] text-bronze underline underline-offset-2" href="${SRC.osha.url}" target="_blank" rel="noopener">OSHA Hazard Communication<i data-lucide="external-link" class="w-3 h-3"></i></a>`);
+    <a class="mt-4 inline-flex items-center gap-1 text-[12px] text-bronze underline underline-offset-2" href="${SRC.osha.url}" target="_blank" rel="noopener">Official source: Safety Data Sheets<i data-lucide="external-link" class="w-3 h-3"></i></a>`);
   $('#sdsFile').addEventListener('change', e => {
     const f = e.target.files && e.target.files[0]; if (!f) return;
     const url = URL.createObjectURL(f);
@@ -1035,7 +1034,7 @@ function renderMapUI() {
   $('#curlBtns').innerHTML = CURLS.map(c => `<button type="button" data-curl="${c}" class="h-10 rounded-lg border text-[13px] font-semibold ${c === map.curl ? 'bg-bronze text-ink border-bronze' : 'border-line text-mute'}">${c}</button>`).join('');
   $('#diaBtns').innerHTML = DIAS.map(d => `<button type="button" data-dia="${d}" class="h-10 rounded-lg border text-[12px] font-semibold tabular-nums ${d === map.dia ? 'bg-bronze text-ink border-bronze' : 'border-line text-mute'}">${d.toFixed(2)}</button>`).join('');
   const s = SHAPES[shape];
-  $('#mapNote').innerHTML = `<p class="text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">${esc(s.style)} · starter ${s.curl} curl</p><p class="mt-1.5 text-fg/90">${esc(s.note)}</p><p class="mt-2 text-[11px] text-mute">Starter maps are placeholders. Kim &amp; Bri set the house maps.</p>`;
+  $('#mapNote').innerHTML = `<p class="text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">${esc(s.style)} · starter ${s.curl} curl</p><p class="mt-1.5 text-fg/90">${esc(s.note)}</p><p class="mt-2 text-[11px] text-mute">Starter maps are placeholders. Your studio sets the house maps.</p>`;
 }
 function hexMix() {
   const tot = mix.esp + mix.moc + mix.blk || 1;

@@ -4,7 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lash Radar · Jackie Miller</title>
-<meta name="description" content="Case study: a phone app for Houston lash artists that watches search trends and turns them into training, with studio tools and Texas rules in one place. Built for The Lash Collaboration.">
+<meta name="description" content="Case study: a phone app prototype for lash artists that watches search trends and turns them into training, with studio tools and Texas rules in one place.">
+<link rel="canonical" href="https://work.jackiemiller.co/lash-radar/">
+<meta property="og:title" content="Lash Radar · Jackie Miller">
+<meta property="og:description" content="Case study: a phone app prototype for lash artists that watches search trends and turns them into training, with studio tools and Texas rules in one place.">
+<meta property="og:url" content="https://work.jackiemiller.co/lash-radar/">
+<meta property="og:image" content="https://cdn.prod.website-files.com/6ae591ce087f836810280258/6af4d6a565aa36315832ff0d_jackie-miller-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'Humane';src:url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802a7_Humane-Regular.ttf') format('truetype');font-display:swap}
@@ -54,6 +60,10 @@ h1{font:400 clamp(110px,18vw,260px)/.81 'Humane',Arial,sans-serif;text-transform
 .end{margin-top:120px;text-align:center;display:grid;justify-items:center;gap:22px}
 .fine{margin-top:60px;font-size:13px;color:var(--grey);max-width:720px}
 footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--grey)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.foot a{color:var(--text);text-decoration:none;transition:color .4s}
+.foot a:hover{color:var(--bone)}
 @media(max-width:960px){.demo{grid-template-columns:1fr}.phone{justify-self:center}}
 @media(max-width:479px){.phone{width:100%;height:680px;border-radius:32px;border-width:8px}}
 </style>
@@ -62,9 +72,9 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
 <header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
 <main><div class="wrap">
   <div class="top">
-    <p class="kicker"><span>Case study 02 / Beauty</span>A studio app for lash artists</p>
+    <p class="kicker"><span>Case study 03 / Lash</span>A studio app for lash artists</p>
     <h1>Lash Radar</h1>
-    <p class="lede">Kim and Bri of The Lash Collaboration, a lash studio in Houston, asked me to update their lash courses. The courses were PDFs, and they weren't making money. I built them an app instead: their courses, the tools they reach for at the chair, and training that keeps up with what clients are searching for.</p>
+    <p class="lede">Lash courses go stale fast. I built Lash Radar to see what a lash course looks like when it keeps up: the lessons, the tools artists reach for at the chair, and training that tracks what clients are searching for.</p>
   </div>
 
   <section class="demo">
@@ -75,7 +85,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
       <div class="tabs">
         <div><b>Trend Radar</b>What clients are searching for, ranked by how fast it's rising. Each trend opens a how-to, a scope check, and what it means for the business.</div>
         <div><b>Station</b>Lash weight math, glue cure and freshness, cost per set, and a reaction triage that sorts symptoms and tells you who to send the client to.</div>
-        <div><b>TDLR Vault</b>A daily sanitation checklist, a safety data sheet binder, and a scope-of-practice chart, each tied to the Texas rule behind it.</div>
+        <div><b>Rules Vault</b>A daily sanitation checklist, a safety data sheet binder, and a scope-of-practice chart, each tied to the Texas rule behind it.</div>
         <div><b>Mapper</b>Map curl and diameter zone by zone on a drawn eye, and pick fiber colors for a client's eye color and skin undertone.</div>
       </div>
       <div class="actions">
@@ -87,13 +97,14 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
 
   <section class="sec">
     <span class="tag">/ / How I built it</span>
-    <h2>Four steps. Same as every project.</h2>
-    <p>This is the way I work on everything, and here's what each step looked like for a lash studio.</p>
+    <h2>Five steps. Same as every project.</h2>
+    <p>This is the way I work on everything, and here's what each step looked like for a lash course.</p>
     <div class="steps">
-      <div class="step"><small>01 / Move into their world</small><h3>PDFs nobody finishes, and artists with full hands.</h3><p>The courses sat in PDF files. Nobody could tell who finished, where students got stuck, or whether a lesson worked. And the people using it spend the day with both hands on a client and a phone on the tray. So everything had to fit a phone, install like an app, and keep each job one tap away.</p></div>
-      <div class="step"><small>02 / Build the foundation</small><h3>The courses are the heart of it.</h3><p>Their classic, volume and other foundation courses move out of the PDFs and into the app as short lessons. In an app, you can see where students drop off and collect their feedback, so a weak lesson gets fixed instead of sitting in a file. Those courses belong to Kim and Bri, so they aren't in this public demo.</p></div>
-      <div class="step"><small>03 / Add what fits</small><h3>A reason to open it after the course is done.</h3><p>Their students are mostly working lash artists. Once they finish a course, a course app has nothing left to offer them. So I added what they reach for mid-appointment: lash weight math, glue cure and freshness, cost per set, a reaction triage, an eye mapper, and a vault of Texas rules for sanitation and scope. The tools keep them coming back, and every visit puts the studio's training in front of them.</p></div>
-      <div class="step"><small>04 / Connect it</small><h3>Hook it to the world outside the studio.</h3><p>The last step ties the app to live data so the training never goes stale. That's the trend radar, and it's the part I'm proudest of.</p></div>
+      <div class="step"><small>01 / Watch</small><h3>Artists with full hands and a phone on the tray.</h3><p>The people using this spend the day with both hands on a client and a phone on the tray. So everything had to fit a phone, install like an app, and keep each job one tap away.</p></div>
+      <div class="step"><small>02 / Find the friction</small><h3>PDFs nobody finishes.</h3><p>Lash courses tend to sit in PDF files. Nobody can tell who finished, where students got stuck, or whether a lesson worked.</p></div>
+      <div class="step"><small>03 / Map it</small><h3>Short lessons, plus the tools they reach for mid-appointment.</h3><p>Courses break into short lessons inside the app, where you can see where students drop off and collect their feedback, so a weak lesson gets fixed instead of sitting in a file. Next to them sit the tools working artists reach for mid-appointment: lash weight math, glue cure and freshness, cost per set, a reaction triage, an eye mapper, and a vault of Texas rules for sanitation and scope. The tools give artists a reason to open the app after the course is done. Course lessons aren't in this public demo.</p></div>
+      <div class="step"><small>04 / Build it</small><h3>The app, the station tools, and the trend radar.</h3><p>Then I built it: the app itself, the station tools, and the trend radar that ties training to live search data so it never goes stale. The radar is the part I'm proudest of.</p></div>
+      <div class="step"><small>05 / Test it</small><h3>Honest gaps.</h3><p>It's a prototype. It needs an internet connection, and checklists and logs save to each phone without syncing between artists. Testing with working lash artists comes before it ships.</p></div>
     </div>
     <div class="feature">
       <small>The core idea / A course that stays current</small>
@@ -101,7 +112,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
       <p>That was the problem I kept coming back to before I built anything. Lash trends move fast, and technology moves faster. A course written this month is behind by next month. So the question became: how do you build training that doesn't have to be rebuilt every time the industry shifts?</p>
       <p>Lash Radar answers it with search data. At the start of each week the studio picks the keywords it cares about, or lets the app pick them, and narrows the results to its own city or region. The app pulls that week's most searched lash topics from Google search trends, ranks what's rising, and turns each one into a short tutorial.</p>
       <p>The course stops being a finished product. It's living: what clients are searching for this week becomes what the artists learn this week. The artists can edit any tutorial before they use it.</p>
-      <p class="note">In this public demo the trends are sample data, labeled that way in the app. The live version runs on the studio's own Google account, so nothing here is connected to real search data.</p>
+      <p class="note">In this public demo the trends are sample data, labeled that way in the app. A live version would run on a studio's own Google account. Nothing here is connected to real search data.</p>
     </div>
   </section>
 
@@ -110,11 +121,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
     <h2>Built for people with a license on the line.</h2>
     <p>A tool for licensed professionals has to earn trust before it earns screen time. These are the calls that keep it safe to use.</p>
     <div class="steps">
-      <div class="step"><small>Rules from the source</small><h3>No rule written from memory.</h3><p>Every Texas rule in the Vault links to TDLR or the Texas Administrative Code and shows when it was checked. Anything the sources don't settle is flagged for a direct answer from TDLR or an attorney.</p></div>
+      <div class="step"><small>Rules from the source</small><h3>No rule written from memory.</h3><p>Every Texas rule in the Vault links to its official source and shows when it was checked. Anything the sources don't settle is flagged for a direct answer from the state or an attorney.</p></div>
       <div class="step"><small>Scope on every trend</small><h3>Popular doesn't mean allowed.</h3><p>Lash lifts and tints are outside the Texas eyelash extension license. Any trend that touches them carries a warning and links to the rule, so nobody books a service their license doesn't cover.</p></div>
       <div class="step"><small>Triage, not diagnosis</small><h3>It sorts and refers out.</h3><p>Eye reactions can't be undone. The triage tool helps an artist judge how urgent a reaction looks and who to send the client to. It never diagnoses and never suggests medication.</p></div>
-      <div class="step"><small>Their craft, their call</small><h3>The expertise belongs to the artists.</h3><p>Technique notes and tutorials are drafts for Kim and Bri to rewrite in their own words, and nothing in the app claims to be state approved training.</p></div>
-      <div class="step"><small>Honest gaps</small><h3>What the prototype doesn't do yet.</h3><p>It needs an internet connection, and checklists and logs save to each phone without syncing between artists. Both are next if the studio takes it into daily use.</p></div>
+      <div class="step"><small>Their craft, their call</small><h3>The expertise belongs to the artists.</h3><p>Technique notes and tutorials are drafts for the studio's own educators to rewrite in their own words. Nothing here replaces your school's own procedures.</p></div>
     </div>
   </section>
 
@@ -122,10 +132,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(
     <span class="tag">/ / / Let's talk</span>
     <h2 style="font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;color:var(--bone)">Your craft, in an app your team will use.</h2>
     <a class="btn" href="https://jackiemiller.co/#contact">Start a conversation</a>
-    <p class="fine">Trend figures in the demo are sample data, not live search results. Technique content is a draft for review, not instruction. Nothing here is legal advice or state approved training. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
+    <p class="fine">Trend figures in the demo are sample data, not live search results. Technique content is a draft for review, not instruction. Nothing here is legal advice. Nothing here replaces your school's own procedures. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
   </section>
 </div></main>
-<footer><div class="wrap">© 2026, Jackie Miller. All Rights Reserved.</div></footer>
+<footer><div class="wrap foot"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
 </body>
 </html>
 
