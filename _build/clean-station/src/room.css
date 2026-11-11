@@ -1,0 +1,113 @@
+/* Treatment room (Lesson 6). Top-down, flat shapes, black-and-white with
+   warm grays. The floor is bone, so the one red accent (the outline on
+   whatever is picked up) always sits on a light surface. */
+
+.rm-msg {
+  flex: 0 0 auto; padding: 8px 14px; border-radius: 10px; min-height: 1.4em;
+  background: var(--surf); border: 1px solid var(--line); color: var(--ink); font-size: 13px; line-height: 1.45;
+}
+.rm-frame { container-type: size; background: #0A0A0A; }
+.rm-room {
+  --floor: #F2EEE6; --ink-k: #111111; --gray: #8A8680; --gray-l: #D9D4CA; --gray-m: #B9B3A9; --white: #FFFFFF;
+  position: relative; container-type: inline-size;
+  width: min(100cqw, 160cqh); height: min(100cqh, 62.5cqw);
+  background-color: var(--floor);
+  background-image: linear-gradient(rgba(17,17,17,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(17,17,17,0.05) 1px, transparent 1px);
+  background-size: 6.25% 10%;
+  border: 6px solid var(--ink-k); box-sizing: border-box; overflow: hidden;
+}
+.rm-room button { appearance: none; -webkit-appearance: none; margin: 0; font: inherit; color: inherit; cursor: pointer; }
+.rm-room .tag {
+  font-family: var(--font-mono); font-size: clamp(8px, 1.25cqw, 12px); line-height: 1.15; color: var(--ink-k);
+  text-transform: uppercase; text-align: center; pointer-events: none;
+}
+
+/* fixed pieces and drop places */
+.rm-surf, .rm-cabinet, .rm-trolley, .rm-shelf {
+  position: absolute; display: flex; align-items: flex-end; justify-content: center; padding: 0 0 0.8cqw;
+  border: 2px solid var(--ink-k); border-radius: 0.6cqw; box-sizing: border-box;
+}
+.rm-surf:hover { box-shadow: 0 0 0 2px rgba(17,17,17,0.35); }
+.rm-surf:focus-visible, .rm-item:focus-visible { outline: 3px solid var(--ink-k); outline-offset: 2px; }
+
+/* dirty surfaces show flecks; clean ones go smooth; wet ones get a hatch */
+.rm-counter, .rm-bed {
+  background-color: var(--gray-l);
+  background-image: radial-gradient(circle, rgba(17,17,17,0.35) 0 1.5px, transparent 2px);
+  background-size: 18px 14px;
+}
+.rm-counter.is-clean, .rm-bed.is-clean { background-image: none; background-color: #ECE8E0; }
+.rm-counter.is-wet, .rm-bed.is-wet {
+  background-image: repeating-linear-gradient(135deg, rgba(17,17,17,0.16) 0 6px, transparent 6px 12px);
+}
+.rm-counter { left: 3%; top: 4%; width: 52%; height: 20%; }
+.rm-tray { left: 40%; top: 6%; width: 13%; height: 15.5%; background: var(--white); border-radius: 1cqw; z-index: 2; }
+.rm-tray .soak { position: absolute; inset: 18% 12% 38%; border-radius: 0.6cqw; background: repeating-linear-gradient(135deg, rgba(17,17,17,0.2) 0 5px, transparent 5px 10px); }
+.rm-sink { left: 58%; top: 4%; width: 15%; height: 20%; background: var(--gray-l); }
+.rm-sink .basin { position: absolute; left: 22%; top: 12%; width: 56%; height: 50%; border-radius: 50%; background: var(--white); border: 2px solid var(--ink-k); }
+.rm-sink.running .basin { background: repeating-linear-gradient(0deg, rgba(17,17,17,0.18) 0 3px, var(--white) 3px 7px); }
+.rm-cabinet { left: 77%; top: 4%; width: 20%; height: 30%; background: var(--gray-m); }
+.rm-trolley { left: 3%; top: 32%; width: 18%; height: 36%; background: var(--gray-m); }
+.rm-bed { left: 27%; top: 32%; width: 46%; height: 38%; border-radius: 1.2cqw; }
+.rm-bed .pillow { position: absolute; right: 4%; top: 18%; width: 9%; height: 64%; border-radius: 1cqw; background: var(--white); border: 2px solid var(--ink-k); }
+.rm-bed.dressed { background: var(--white); background-image: linear-gradient(90deg, transparent 0 8%, rgba(17,17,17,0.12) 8% 8.6%, transparent 8.6%); }
+.rm-trash { left: 3%; top: 76%; width: 10%; height: 20%; border-radius: 50%; background: var(--gray); }
+.rm-trash .tag, .rm-cabinet .tag, .rm-trolley .tag, .rm-shelf .tag { color: var(--ink-k); }
+.rm-bag { left: 16%; top: 76%; width: 12%; height: 20%; border-radius: 1.6cqw 1.6cqw 0.6cqw 0.6cqw; background: var(--white); border-style: dashed; }
+.rm-shelf { left: 60%; top: 76%; width: 37%; height: 20%; background: var(--gray-l); }
+.rm-timer {
+  position: absolute; left: 50%; top: 72%; transform: translateX(-50%); z-index: 4;
+  padding: 0.4cqw 1.2cqw; border-radius: 99px; background: var(--ink-k); color: var(--floor);
+  font-family: var(--font-mono); font-size: clamp(9px, 1.3cqw, 13px); white-space: nowrap;
+}
+
+/* things you can pick up */
+.rm-item {
+  position: absolute; z-index: 3; width: 9.5%; height: 13%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5cqw;
+  background: transparent; border: none; padding: 0; border-radius: 0.8cqw;
+}
+.rm-item:hover .shape { transform: translateY(-1px); }
+.rm-item.sel { outline: 3px solid #B5121B; outline-offset: 2px; background: rgba(255,255,255,0.6); }
+.rm-item .shape { display: block; width: 70%; height: 50%; border: 2px solid var(--ink-k); border-radius: 0.5cqw; background: var(--white); box-sizing: border-box; }
+.rm-item .tag { background: rgba(242,238,230,0.9); padding: 0 0.3cqw; border-radius: 3px; }
+
+.i-spatula { left: 5%; top: 7%; }
+.i-spatula .shape { width: 80%; height: 18%; border-radius: 99px; background: var(--gray-l); }
+.i-tools { left: 19%; top: 7%; }
+.i-tools .shape, .i-ready .shape, .i-placed .shape {
+  background: repeating-linear-gradient(90deg, var(--ink-k) 0 3px, transparent 3px 9px); border-color: transparent;
+}
+.i-ready { left: 41.5%; top: 6.5%; }
+.i-placed { position: absolute; left: 19%; top: 7%; width: 9.5%; height: 13%; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5cqw; }
+.i-placed .shape { display: block; width: 70%; height: 50%; }
+.i-fresh { left: 82.5%; top: 10%; }
+.i-fresh .shape { background: repeating-linear-gradient(0deg, var(--white) 0 5px, var(--gray-l) 5px 6px); }
+.i-cotton { left: 4.5%; top: 35%; }
+.i-cotton .shape { border-radius: 50%; width: 46%; height: 52%; }
+.i-gauze { left: 12%; top: 35%; }
+.i-gauze .shape { background: repeating-linear-gradient(45deg, var(--white) 0 4px, var(--gray-l) 4px 5px), var(--white); }
+.i-gloves { left: 8%; top: 51%; }
+.i-gloves .shape { background: var(--gray-m); border-radius: 1.2cqw 1.2cqw 0.4cqw 0.4cqw; }
+.i-sheet { left: 35%; top: 39%; width: 18%; height: 22%; }
+.i-sheet .shape { width: 90%; height: 62%; background: var(--white); background-image: repeating-linear-gradient(160deg, transparent 0 9px, rgba(17,17,17,0.22) 9px 10px); }
+.i-towel { left: 55%; top: 39%; width: 11%; height: 22%; }
+.i-towel .shape { width: 80%; height: 62%; background: var(--gray-l); background-image: repeating-linear-gradient(160deg, transparent 0 7px, rgba(17,17,17,0.22) 7px 8px); }
+.i-cleaner { left: 64%; top: 77.5%; }
+.i-cleaner .shape { width: 34%; height: 58%; border-radius: 0.5cqw 0.5cqw 0.3cqw 0.3cqw; }
+.i-disinfectant { left: 80%; top: 77.5%; }
+.i-disinfectant .shape { width: 34%; height: 58%; background: linear-gradient(var(--ink-k) 0 35%, var(--white) 35% 55%, var(--ink-k) 55%); border-radius: 0.5cqw 0.5cqw 0.3cqw 0.3cqw; }
+
+/* capstone rail on small screens: keep the numbered boxes, show only the active label */
+@media (max-width: 640px) {
+  .crs-cap-rail { gap: 8px; }
+  .crs-cap-rail .step:not(.active) { font-size: 0; gap: 0; }
+  .rm-msg { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rm-item:hover .shape { transform: none; }
+}
+/* narrow room (phones): drop the furniture labels so item labels stay readable */
+@container (max-width: 560px) {
+  .rm-counter .tag, .rm-trolley .tag, .rm-shelf .tag, .rm-cabinet .tag { display: none; }
+}
