@@ -1,0 +1,212 @@
+{
+  "_read_me": "Every color fact in this file is marked needs_stylist_review: true. A licensed stylist should check each one, fix anything wrong, and then set that flag to false. Edit the words and numbers only. Keep the ids (like \"yellow-orange\") exactly as they are, because the lesson uses them to connect things. Hex values like #c4621f are the on-screen swatch colors and are illustrations, not formulas.",
+
+  "hook": {
+    "line": "She asked for ash. She got orange. Here's why.",
+    "swatch_hex": "#c98a3c",
+    "swatch_label": "Brassy blonde: orange-gold warmth showing through",
+    "needs_stylist_review": true
+  },
+
+  "levels": [
+    { "level": 1, "name": "Black", "hex": "#1a1512", "pigment": "red", "needs_stylist_review": true },
+    { "level": 2, "name": "Darkest brown", "hex": "#2b1d16", "pigment": "red", "needs_stylist_review": true },
+    { "level": 3, "name": "Dark brown", "hex": "#3b271c", "pigment": "red", "needs_stylist_review": true },
+    { "level": 4, "name": "Medium brown", "hex": "#523625", "pigment": "red-orange", "needs_stylist_review": true },
+    { "level": 5, "name": "Light brown", "hex": "#6b4a31", "pigment": "red-orange", "needs_stylist_review": true },
+    { "level": 6, "name": "Dark blonde", "hex": "#8a6440", "pigment": "orange", "needs_stylist_review": true },
+    { "level": 7, "name": "Medium blonde", "hex": "#a8804f", "pigment": "gold-orange", "needs_stylist_review": true },
+    { "level": 8, "name": "Light blonde", "hex": "#c4a06a", "pigment": "yellow-orange", "needs_stylist_review": true },
+    { "level": 9, "name": "Very light blonde", "hex": "#dcc18f", "pigment": "yellow", "needs_stylist_review": true },
+    { "level": 10, "name": "Lightest blonde", "hex": "#ece0bd", "pigment": "pale-yellow", "needs_stylist_review": true }
+  ],
+
+  "pigments": [
+    {
+      "id": "red",
+      "name": "Red",
+      "levels": "1 to 3",
+      "swatch_hex": "#8e2a1c",
+      "neutral_hex": "#4a3a32",
+      "neutral_label": "Neutral dark brown",
+      "neutralized_by": ["green"],
+      "wheel_id": "red",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "red-orange",
+      "name": "Red-orange",
+      "levels": "4 to 5",
+      "swatch_hex": "#a8421f",
+      "neutral_hex": "#5c4a3e",
+      "neutral_label": "Neutral medium brown",
+      "neutralized_by": ["blue-green"],
+      "wheel_id": "red-orange",
+      "needs_stylist_review": true,
+      "review_note": "Not in the original brief. Toner inferred from the color wheel (blue-green sits opposite red-orange). Please confirm."
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "levels": "6",
+      "swatch_hex": "#c4621f",
+      "neutral_hex": "#7a6553",
+      "neutral_label": "Neutral dark blonde",
+      "neutralized_by": ["blue"],
+      "wheel_id": "orange",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "gold-orange",
+      "name": "Gold-orange",
+      "levels": "7",
+      "swatch_hex": "#d0842c",
+      "neutral_hex": "#957f68",
+      "neutral_label": "Neutral medium blonde",
+      "neutralized_by": ["blue", "blue-violet"],
+      "wheel_id": "yellow-orange",
+      "needs_stylist_review": true,
+      "review_note": "Not in the original brief. Gold-orange sits between orange and yellow-orange, so the lesson accepts blue or blue-violet. On the wheel it is drawn on the yellow-orange slice. Please confirm."
+    },
+    {
+      "id": "yellow-orange",
+      "name": "Yellow-orange",
+      "levels": "8",
+      "swatch_hex": "#dca23e",
+      "neutral_hex": "#b09c82",
+      "neutral_label": "Neutral light blonde",
+      "neutralized_by": ["blue-violet"],
+      "wheel_id": "yellow-orange",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "levels": "9",
+      "swatch_hex": "#e6c457",
+      "neutral_hex": "#cbbda4",
+      "neutral_label": "Neutral very light blonde",
+      "neutralized_by": ["violet"],
+      "wheel_id": "yellow",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "pale-yellow",
+      "name": "Pale yellow",
+      "levels": "10",
+      "swatch_hex": "#efe0a0",
+      "neutral_hex": "#e0d8c6",
+      "neutral_label": "Neutral lightest blonde",
+      "neutralized_by": ["violet"],
+      "wheel_id": "yellow",
+      "needs_stylist_review": true,
+      "review_note": "Not in the original brief. Treated as a lighter yellow, so violet cancels it. Please confirm."
+    }
+  ],
+
+  "toners": [
+    {
+      "id": "violet",
+      "name": "Violet",
+      "hex": "#6e3a8e",
+      "cancels": "yellow",
+      "wrong_effect": "Violet only has enough pull to cancel yellow. Deeper warmth shows right through it, and the result looks dull and muddy.",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "blue-violet",
+      "name": "Blue-violet",
+      "hex": "#4a46a0",
+      "cancels": "yellow-orange",
+      "wrong_effect": "Blue-violet is aimed at yellow-orange. On other tones it only half works, so some warmth stays behind.",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "blue",
+      "name": "Blue",
+      "hex": "#2f5fae",
+      "cancels": "orange",
+      "wrong_effect": "Blue is built for orange. Put it on yellow and you get a green cast, because blue plus yellow makes green. On red it barely makes a dent.",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "blue-green",
+      "name": "Blue-green",
+      "hex": "#1f8a86",
+      "cancels": "red-orange",
+      "wrong_effect": "Blue-green is aimed at red-orange. On lighter, yellower hair it reads green instead of neutral.",
+      "needs_stylist_review": true
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "hex": "#3a9a48",
+      "cancels": "red",
+      "wrong_effect": "Green is for red. On yellow or orange it has nothing to fight, so the hair ends up swampy or khaki.",
+      "needs_stylist_review": true
+    }
+  ],
+
+  "wheel": [
+    { "id": "yellow", "name": "Yellow", "hex": "#f2cf2e" },
+    { "id": "yellow-orange", "name": "Yellow-orange", "hex": "#f4a52a" },
+    { "id": "orange", "name": "Orange", "hex": "#ee7a22" },
+    { "id": "red-orange", "name": "Red-orange", "hex": "#e2502a" },
+    { "id": "red", "name": "Red", "hex": "#c9302c" },
+    { "id": "red-violet", "name": "Red-violet", "hex": "#a3305f" },
+    { "id": "violet", "name": "Violet", "hex": "#6e3a8e" },
+    { "id": "blue-violet", "name": "Blue-violet", "hex": "#4a46a0" },
+    { "id": "blue", "name": "Blue", "hex": "#2f5fae" },
+    { "id": "blue-green", "name": "Blue-green", "hex": "#1f8a86" },
+    { "id": "green", "name": "Green", "hex": "#3a9a48" },
+    { "id": "yellow-green", "name": "Yellow-green", "hex": "#9ab83a" }
+  ],
+
+  "developers": [
+    { "volume": 10, "lift_label": "about 1 level", "max_lift": 1, "needs_stylist_review": true },
+    { "volume": 20, "lift_label": "1 to 2 levels", "max_lift": 2, "needs_stylist_review": true },
+    { "volume": 30, "lift_label": "2 to 3 levels", "max_lift": 3, "needs_stylist_review": true },
+    { "volume": 40, "lift_label": "3 to 4 levels (high-lift)", "max_lift": 4, "needs_stylist_review": true }
+  ],
+
+  "callouts": {
+    "beyond_developer": {
+      "text": "That's more lift than a tint and developer usually gives in one go. This is lightener territory.",
+      "needs_stylist_review": true,
+      "review_note": "Not in the original brief. Shown when the lift is more than 4 levels. Please confirm."
+    },
+    "color_doesnt_lift_color": {
+      "title": "Color doesn't lift color.",
+      "text": "Tint can't lighten artificial color, no matter the developer. To go lighter on colored hair, you need lightener.",
+      "needs_stylist_review": true
+    },
+    "no_lift": {
+      "text": "Your target isn't lighter than where you start. No lift means no new warmth gets exposed.",
+      "needs_stylist_review": true
+    }
+  },
+
+  "scenarios": [
+    {
+      "id": "s1",
+      "client": "A regular. Natural level 6. She wants a clean level 9 blonde with no warmth.",
+      "start": 6,
+      "goal": 9,
+      "needs_stylist_review": true
+    },
+    {
+      "id": "s2",
+      "client": "A new client. Natural level 4. She wants two levels lighter and wants it to read cool, not brassy.",
+      "start": 4,
+      "goal": 6,
+      "needs_stylist_review": true
+    },
+    {
+      "id": "s3",
+      "client": "A walk-in. Natural level 5. She wants a soft, neutral level 8.",
+      "start": 5,
+      "goal": 8,
+      "needs_stylist_review": true
+    }
+  ]
+}
