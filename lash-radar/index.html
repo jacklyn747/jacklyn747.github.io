@@ -16,56 +16,112 @@
 <link rel="stylesheet" href="/assets/story.css">
 </head>
 <body>
-<header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
+<header class="site"><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
+<nav class="lnav" aria-label="Lash Radar">
+  <div class="wrap">
+    <a class="name" href="#top">Lash Radar</a>
+    <button type="button" class="menu" aria-expanded="false" aria-controls="jump" aria-label="Jump to a section">+</button>
+    <div class="links" id="jump">
+      <a href="#highlights">Highlights</a>
+      <a href="#closer">Closer look</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#questions">Questions</a>
+    </div>
+    <a class="try" href="/lash-radar/app/">Try it</a>
+  </div>
+</nav>
 <main>
-<a class="back" href="https://work.jackiemiller.co/">&larr; Work</a>
 
-<section class="s dark" data-go=".btn" aria-labelledby="h-1">
-  <p class="label">Case study 03 / Lash</p>
-  <h1 id="h-1">Lash Radar</h1>
-  <p class="line">Lash courses go stale fast. This one keeps up.</p>
-  <div class="media" data-fx="scale">
-    <a class="hit phone" href="/lash-radar/app/" aria-label="Try the demo"><img class="scroll-scale" src="img/trend-radar.png" width="780" height="1688" alt="Lash Radar on a phone, showing the Trend Radar list of rising lash trends"></a>
+<section class="sec dark" id="top" aria-labelledby="h-top">
+  <h1 id="h-top">Lash Radar.</h1>
+  <p class="tag">Keeps up.</p>
+  <p class="who">A phone app for lash artists and lash schools.</p>
+  <a class="btn red" href="/lash-radar/app/">Try the app</a>
+  <div class="hero-media"><a class="phone float" href="/lash-radar/app/" aria-label="Try the app"><img src="img/trend-radar.png" width="780" height="1688" alt="Lash Radar on a phone, showing the Trend Radar list of rising lash trends"></a></div>
+</section>
+<section class="sec light" id="highlights" aria-labelledby="h-hl" data-rail>
+  <h2 id="h-hl">Get the highlights.</h2>
+  <div class="rail" data-fx="swipe" role="group" aria-label="Highlights">
+      <button type="button" class="card" data-modal data-title="See what clients search for." data-text="Trends are ranked by how fast searches are rising." data-img="img/trend-radar.png" data-alt="Trend Radar screen ranking rising lash trends" aria-label="See what clients search for. Open details.">
+        <h3>See what clients search for.</h3><span class="mark m-pulse" aria-hidden="true"></span>
+        <span class="shot"><img src="img/trend-radar.png" width="780" height="1688" alt="Trend Radar screen ranking rising lash trends" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="Every trend becomes a tutorial." data-text="Each trend opens a masterclass, steps, and what it means for the business." data-img="img/trend-espresso.png" data-alt="Trend detail for Espresso Brown Lashes with a short masterclass" aria-label="Every trend becomes a tutorial. Open details.">
+        <h3>Every trend becomes a tutorial.</h3><span class="mark m-spin" aria-hidden="true"></span>
+        <span class="shot"><img src="img/trend-espresso.png" width="780" height="1688" alt="Trend detail for Espresso Brown Lashes with a short masterclass" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="Lash math in one tap." data-text="Lash weight, glue cure, reaction triage and cost per set." data-img="img/station.png" data-alt="Station screen with the lash weight calculator" aria-label="Lash math in one tap. Open details.">
+        <h3>Lash math in one tap.</h3><span class="mark m-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="shot"><img src="img/station.png" width="780" height="1688" alt="Station screen with the lash weight calculator" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="A daily checklist, sourced." data-text="Every rule links to an official source." data-img="img/rules-vault.png" data-alt="Rules Vault screen with the daily sanitation checklist" aria-label="A daily checklist, sourced. Open details.">
+        <h3>A daily checklist, sourced.</h3><span class="mark m-tick" aria-hidden="true"></span>
+        <span class="shot"><img src="img/rules-vault.png" width="780" height="1688" alt="Rules Vault screen with the daily sanitation checklist" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
   </div>
-  <a class="btn" href="/lash-radar/app/">Try the demo</a>
+  <div class="railnav"><button type="button" data-dir="-1" aria-label="Previous highlight">&larr;</button><button type="button" data-dir="1" aria-label="Next highlight">&rarr;</button></div>
 </section>
-<section class="s light" data-go=".tile" aria-labelledby="h-2">
-  <div class="rule"></div>
-  <h2 id="h-2">Spots trends.</h2>
-  <p class="line">What clients search for becomes the next lesson.</p>
-  <div class="media bento three" data-fx="stagger">
-    <button type="button" class="hit tile" data-lb="img/trend-espresso.png" data-alt="Trend detail for Espresso Brown Lashes, with a short masterclass and application steps" data-cap="Espresso Brown Lashes, up 340 percent." aria-label="Open: Espresso brown"><img class="" src="img/trend-espresso.png" width="780" height="1688" alt="Trend detail for Espresso Brown Lashes, with a short masterclass and application steps" loading="lazy"><span class="cap">Espresso brown</span></button>
-    <button type="button" class="hit tile" data-lb="img/trend-manga.png" data-alt="Trend detail for Manga Spikes, with mapping steps" data-cap="Manga Spikes, up 280 percent." aria-label="Open: Manga spikes"><img class="" src="img/trend-manga.png" width="780" height="1688" alt="Trend detail for Manga Spikes, with mapping steps" loading="lazy"><span class="cap">Manga spikes</span></button>
-    <button type="button" class="hit tile" data-lb="img/trend-korean-lift.png" data-alt="Trend detail for Korean Lash Lift, flagged out of scope for a lash artist" data-cap="Korean Lash Lift, flagged out of scope for a lash artist." aria-label="Open: Korean lift"><img class="" src="img/trend-korean-lift.png" width="780" height="1688" alt="Trend detail for Korean Lash Lift, flagged out of scope for a lash artist" loading="lazy"><span class="cap">Korean lift</span></button>
+<section class="sec dark" aria-labelledby="h-c1">
+  <h2 id="h-c1">Trends climb.</h2>
+  <p class="lead">What clients search for this week becomes what artists learn this week.</p>
+  <div class="stack" data-fx="stagger"><div class="tcard"><span><small>Color &amp; Palettes</small><b>Espresso Brown Lashes</b></span><em>340%</em></div><div class="tcard"><span><small>Modular Mapping</small><b>Manga Spikes</b></span><em>280%</em></div><div class="tcard"><span><small>Safety &amp; Health</small><b>Lash Weight Math</b></span><em>215%</em></div><div class="tcard"><span><small>Modular Mapping</small><b>Korean Lash Lift</b></span><em>190%</em></div></div>
+  <button type="button" class="plus" data-modal data-title="Where the numbers come from" data-text="In this demo the trends are sample data. A live version reads the studio&#x27;s own search trends."><i aria-hidden="true">+</i>Where the numbers come from</button>
+</section>
+
+<section class="sec light" aria-labelledby="h-c2">
+  <h2 id="h-c2">Rules, sourced.</h2>
+  <p class="lead">Every rule links to where it came from.</p>
+  <div class="side" data-fx="slide-r"><button type="button" class="phone" style="padding:0;cursor:pointer;display:block" data-modal data-title="Rules Vault" data-text="A daily sanitation checklist, a scope chart, and a link to the official source for each rule." data-img="img/rules-vault.png" data-alt="Rules Vault screen with the daily sanitation checklist" aria-label="Open the Rules Vault screen"><img src="img/rules-vault.png" width="780" height="1688" alt="Rules Vault screen with the daily sanitation checklist" loading="lazy"></button></div>
+  <button type="button" class="plus" data-modal data-title="How sources work" data-text="Each rule links to the official source it came from, with the date it was last checked."><i aria-hidden="true">+</i>How sources work</button>
+</section>
+
+<section class="sec dark" id="closer" aria-labelledby="h-cl">
+  <h2 id="h-cl">Take a closer look.</h2>
+  <p class="lead">The real app, running right here.</p>
+  <div class="appframe" data-fx="scale-in"><iframe id="live-app" src="/lash-radar/app/" title="Lash Radar app, live demo" loading="lazy"></iframe></div>
+  
+  <div class="captabs" role="tablist" aria-label="Captions" data-tabs="cap-lash" data-frame="live-app"><button type="button" role="tab" aria-selected="true" tabindex="0" data-line="Rising searches, ranked." data-app="radar" data-jump="#live-app">Trend Radar</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-line="Lash math at the chair." data-app="station" data-jump="#live-app">Station</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-line="A checklist with sourced rules." data-app="vault" data-jump="#live-app">Rules Vault</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-line="Map curl and length on a drawn eye." data-app="mapper" data-jump="#live-app">Mapper</button></div>
+  <p class="capline" id="cap-lash" aria-live="polite">Rising searches, ranked.</p>
+  <a class="quiet" href="/lash-radar/app/">Open full screen</a>
+</section>
+<section class="sec light" id="numbers" aria-labelledby="h-num">
+  <h2 id="h-num">Built for the chair.</h2>
+  <div class="bento">
+    <button type="button" class="tile" data-modal data-title="10 trends tracked" data-text="The demo tracks 10 sample trends across 4 categories." aria-label="10 trends tracked. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="10">10</span><span class="unit">trends tracked</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="4 station tools" data-text="Lash weight, glue, reaction triage, and profit per set." aria-label="4 station tools. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="4">4</span><span class="unit">station tools</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="10 daily checks" data-text="A sanitation checklist that resets every day." aria-label="10 daily checks. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="10">10</span><span class="unit">daily checks</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="7 official sources" data-text="Every rule in the vault links to one of 7 official sources." aria-label="7 official sources. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="7">7</span><span class="unit">official sources</span>
+    </button>
   </div>
-  <p class="hint-cue">Tap a screen to open it</p>
 </section>
-<section class="s dark" data-go=".hit" aria-labelledby="h-3">
-  <div class="rule"></div>
-  <h2 id="h-3">Lives at the chair.</h2>
-  <p class="line">Lash math, glue cure, cost per set. One tap.</p>
-  <div class="media" data-fx="pan">
-    <button type="button" class="hit phone" data-lb="img/station.png" data-alt="Station tools screen with the lash weight calculator" aria-label="Enlarge: Lives at the chair."><img class="scroll-pan" src="img/station.png" width="780" height="1688" alt="Station tools screen with the lash weight calculator" loading="lazy"></button>
+<section class="sec dark" aria-labelledby="h-close">
+  <div data-fx="fade-up">
+  <h2 id="h-close">Want an app like this for your studio or school?</h2>
+  <a class="btn red" href="https://jackiemiller.co/#contact">Let's talk</a><br>
+  <a class="quiet" href="/lash-radar/app/">Try it</a>
   </div>
-  <p class="hint-cue">Tap to enlarge</p>
 </section>
-<section class="s light" data-go=".hit" aria-labelledby="h-4">
-  <div class="rule"></div>
-  <h2 id="h-4">Rules, sourced.</h2>
-  <p class="line">Every rule links to where it came from.</p>
-  <div class="media" data-fx="blur">
-    <button type="button" class="hit phone" data-reveal aria-expanded="false" aria-controls="rv-4" aria-label="Tap the screen"><img class="" src="img/rules-vault.png" width="780" height="1688" alt="Rules Vault screen with a daily sanitation checklist" loading="lazy"></button>
+<section class="sec light" id="questions" aria-labelledby="h-qa">
+  <h2 id="h-qa">Questions.</h2>
+  <div class="qa" data-fx="slide-stagger">
+    <details><summary>Need state approval?</summary><p>Built in.</p></details>
+    <details><summary>Can you build one for my school?</summary><p>Yes. I build apps like this from your training, in your voice.</p></details>
+    <details class="fine"><summary>Fine print</summary><p>Sample app. Content shown for demonstration.</p></details>
   </div>
-  <p class="hint-cue">Tap the screen</p>
-  <p class="reveal" id="rv-4" hidden>Need state approval? Built in. Demo data. Not legal advice.</p>
 </section>
-<section class="s dark" data-go=".btn" aria-labelledby="h-5">
-  <h2 id="h-5" data-fx="lines"><span class="ln">Your craft,</span><span class="ln">in an app your</span><span class="ln">students open.</span></h2>
-  <a class="btn" href="https://jackiemiller.co/#contact">Let's talk</a>
-</section>
-<p class="note">Demo data. Not legal advice.</p>
 </main>
-<footer><div class="wrap foot"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
+<footer class="foot"><div class="wrap"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
 <script src="/assets/story.js" defer></script>
 </body>
 </html>
