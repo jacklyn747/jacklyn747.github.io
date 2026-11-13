@@ -16,56 +16,123 @@
 <link rel="stylesheet" href="/assets/story.css">
 </head>
 <body>
-<header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
+<header class="site"><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
+<nav class="lnav" aria-label="Why Blonde Goes Brassy">
+  <div class="wrap">
+    <a class="name" href="#top">Why Blonde Goes Brassy</a>
+    <button type="button" class="menu" aria-expanded="false" aria-controls="jump" aria-label="Jump to a section">+</button>
+    <div class="links" id="jump">
+      <a href="#highlights">Highlights</a>
+      <a href="#closer">Closer look</a>
+      <a href="#numbers">Numbers</a>
+      <a href="#questions">Questions</a>
+    </div>
+    <a class="try" href="/why-blonde-goes-brassy/lesson/">Try it</a>
+  </div>
+</nav>
 <main>
-<a class="back" href="https://work.jackiemiller.co/">&larr; Work</a>
 
-<section class="s dark" data-go=".btn" aria-labelledby="h-1">
-  <p class="label">Case study 01 / Hair</p>
-  <h1 id="h-1">Why Blonde Goes Brassy</h1>
-  <p class="line">A ten-minute color lesson. Students learn why toner works, then prove it.</p>
-  <div class="media" data-fx="scale">
-    <a class="hit phone" href="/why-blonde-goes-brassy/lesson/" aria-label="Start the lesson"><img class="scroll-scale" src="img/lesson-opening.png" width="780" height="1688" alt="Opening screen of the lesson: she asked for ash, she got orange"></a>
+<section class="sec dark" id="top" aria-labelledby="h-top">
+  <h1 id="h-top">Why Blonde Goes Brassy.</h1>
+  <p class="tag">Toner, finally.</p>
+  <p class="who">A ten-minute lesson for cosmetology students.</p>
+  <a class="btn red" href="/why-blonde-goes-brassy/lesson/">Try the lesson</a>
+  <div class="hero-media"><a class="phone float" href="/why-blonde-goes-brassy/lesson/" aria-label="Try the lesson"><img src="img/color-wheel.png" width="780" height="1688" alt="The lesson on a phone, showing the color wheel screen"></a></div>
+</section>
+<section class="sec light" id="highlights" aria-labelledby="h-hl" data-rail>
+  <h2 id="h-hl">Get the highlights.</h2>
+  <div class="rail" data-fx="swipe" role="group" aria-label="Highlights">
+      <button type="button" class="card" data-modal data-title="Lighten it. Warmth shows up." data-text="Students move two sliders and watch the hidden warmth come forward." data-img="img/level-lab.png" data-alt="Level Lab screen with sliders for starting and target level" aria-label="Lighten it. Warmth shows up. Open details.">
+        <h3>Lighten it. Warmth shows up.</h3><span class="mark m-pulse" aria-hidden="true"></span>
+        <span class="shot"><img src="img/level-lab.png" width="780" height="1688" alt="Level Lab screen with sliders for starting and target level" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="Find the brass on the wheel." data-text="The wheel shows which color sits across from the brass." data-img="img/color-wheel.png" data-alt="Color wheel screen for finding the warmth" aria-label="Find the brass on the wheel. Open details.">
+        <h3>Find the brass on the wheel.</h3><span class="mark m-spin" aria-hidden="true"></span>
+        <span class="shot"><img src="img/color-wheel.png" width="780" height="1688" alt="Color wheel screen for finding the warmth" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="Pick the toner that cancels it." data-text="Students pick the toner that cancels the warmth they just found." data-img="img/client-2.png" data-alt="Practice client screen asking which warmth shows up and which toner cancels it" aria-label="Pick the toner that cancels it. Open details.">
+        <h3>Pick the toner that cancels it.</h3><span class="mark m-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="shot"><img src="img/client-2.png" width="780" height="1688" alt="Practice client screen asking which warmth shows up and which toner cancels it" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
+      <button type="button" class="card" data-modal data-title="Prove it on real clients." data-text="Three practice clients, scored out of six, check what stuck." data-img="img/client-1.png" data-alt="First practice client: natural level 6 going to a clean level 9" aria-label="Prove it on real clients. Open details.">
+        <h3>Prove it on real clients.</h3><span class="mark m-tick" aria-hidden="true"></span>
+        <span class="shot"><img src="img/client-1.png" width="780" height="1688" alt="First practice client: natural level 6 going to a clean level 9" loading="lazy"></span>
+        <span class="open" aria-hidden="true">+</span>
+      </button>
   </div>
-  <a class="btn" href="/why-blonde-goes-brassy/lesson/">Start the lesson</a>
+  <div class="railnav"><button type="button" data-dir="-1" aria-label="Previous highlight">&larr;</button><button type="button" data-dir="1" aria-label="Next highlight">&rarr;</button></div>
 </section>
-<section class="s light" data-go=".hit" aria-labelledby="h-2">
-  <div class="rule"></div>
-  <h2 id="h-2">See the warmth coming.</h2>
-  <p class="line">Pick a level. Watch the hidden pigment show up.</p>
-  <div class="media" data-fx="stagger">
-    <button type="button" class="hit phone" data-reveal aria-expanded="false" aria-controls="rv-2" aria-label="Tap the screen"><img class="" src="img/level-lab.png" width="780" height="1688" alt="Level Lab screen with sliders for starting and target level" loading="lazy"></button>
+<section class="sec dark pin" aria-labelledby="h-c1" data-pin>
+  <div class="stick">
+    <h2 id="h-c1">See the warmth.</h2>
+    <p class="lead">Every level of lift uncovers more orange and yellow. Students watch it happen instead of memorizing a chart.</p>
+    <div class="strip" role="img" aria-label="A hair strip from level 5 to level 10, with warmth showing through at each level"><div class="lv" style="--base:#6b4a31;--warm:#a8421f" data-say="Level 5: red-orange shows through"><b>5</b></div><div class="lv" style="--base:#8a6440;--warm:#c4621f" data-say="Level 6: orange shows through"><b>6</b></div><div class="lv" style="--base:#a8804f;--warm:#d0842c" data-say="Level 7: gold-orange shows through"><b>7</b></div><div class="lv" style="--base:#c4a06a;--warm:#dca23e" data-say="Level 8: yellow-orange shows through"><b>8</b></div><div class="lv" style="--base:#dcc18f;--warm:#e6c457" data-say="Level 9: yellow shows through"><b>9</b></div><div class="lv" style="--base:#ece0bd;--warm:#efe0a0" data-say="Level 10: pale yellow shows through"><b>10</b></div></div>
+    <p class="readout" aria-live="polite"></p>
+    <button type="button" class="plus" data-modal data-title="Levels and warmth" data-tpl="tpl-levels"><i aria-hidden="true">+</i>See the levels chart</button>
   </div>
-  <p class="hint-cue">Tap the screen</p>
-  <p class="reveal" id="rv-2" hidden>Goal: name the pigment that shows up, then pick the toner that cancels it.</p>
 </section>
-<section class="s dark" data-go=".hit" aria-labelledby="h-3">
-  <div class="rule"></div>
-  <h2 id="h-3">Cancel it out.</h2>
-  <p class="line">Drag the toner across the wheel. The brass disappears.</p>
-  <div class="media" data-fx="pan">
-    <button type="button" class="hit phone" data-lb="img/color-wheel.png" data-alt="Color wheel screen for picking the toner opposite the warmth" aria-label="Enlarge: Cancel it out."><img class="scroll-pan" src="img/color-wheel.png" width="780" height="1688" alt="Color wheel screen for picking the toner opposite the warmth" loading="lazy"></button>
+<template id="tpl-levels"><table><thead><tr><th>Level</th><th>Name</th><th>Warmth</th></tr></thead><tbody><tr><td>1</td><td>Black</td><td><i style="--c:#8e2a1c"></i>Red</td></tr><tr><td>2</td><td>Darkest brown</td><td><i style="--c:#8e2a1c"></i>Red</td></tr><tr><td>3</td><td>Dark brown</td><td><i style="--c:#8e2a1c"></i>Red</td></tr><tr><td>4</td><td>Medium brown</td><td><i style="--c:#a8421f"></i>Red-orange</td></tr><tr><td>5</td><td>Light brown</td><td><i style="--c:#a8421f"></i>Red-orange</td></tr><tr><td>6</td><td>Dark blonde</td><td><i style="--c:#c4621f"></i>Orange</td></tr><tr><td>7</td><td>Medium blonde</td><td><i style="--c:#d0842c"></i>Gold-orange</td></tr><tr><td>8</td><td>Light blonde</td><td><i style="--c:#dca23e"></i>Yellow-orange</td></tr><tr><td>9</td><td>Very light blonde</td><td><i style="--c:#e6c457"></i>Yellow</td></tr><tr><td>10</td><td>Lightest blonde</td><td><i style="--c:#efe0a0"></i>Pale yellow</td></tr></tbody></table></template>
+
+<section class="sec light" aria-labelledby="h-c2">
+  <h2 id="h-c2">Cancel it.</h2>
+  <p class="lead">Colors across the wheel cancel each other out. Blue meets orange. Violet meets yellow.</p>
+  <div class="wheelbox" role="img" aria-label="Color wheel turning until the toner sits across from the brass">
+    <div class="wheel" style="--wheel:conic-gradient(#f2cf2e 0deg 30deg,#f4a52a 30deg 60deg,#ee7a22 60deg 90deg,#e2502a 90deg 120deg,#c9302c 120deg 150deg,#a3305f 150deg 180deg,#6e3a8e 180deg 210deg,#4a46a0 210deg 240deg,#2f5fae 240deg 270deg,#1f8a86 270deg 300deg,#3a9a48 300deg 330deg,#9ab83a 330deg 360deg)" data-rotate data-from="45" data-to="-75"></div>
+    <span class="pointer top">Brass</span><span class="pointer bot">Toner</span>
   </div>
-  <p class="hint-cue">Tap to enlarge</p>
+  <button type="button" class="plus" data-modal data-title="Why it works" data-text="Opposite colors on the wheel neutralize each other. So the toner sits across from the warmth that lightening uncovered."><i aria-hidden="true">+</i>Why it works</button>
 </section>
-<section class="s light" data-go=".tile" aria-labelledby="h-4">
-  <div class="rule"></div>
-  <h2 id="h-4">Prove it.</h2>
-  <p class="line">Three clients. Six points. No guessing.</p>
-  <div class="media bento three" data-fx="blur">
-    <button type="button" class="hit tile" data-lb="img/client-1.png" data-alt="Client one: natural level 6 going to a clean level 9 blonde" data-cap="A natural level 6 who wants a clean level 9 blonde with no warmth." aria-label="Open: Client 1"><img class="" src="img/client-1.png" width="780" height="1688" alt="Client one: natural level 6 going to a clean level 9 blonde" loading="lazy"><span class="cap">Client 1</span></button>
-    <button type="button" class="hit tile" data-lb="img/client-2.png" data-alt="Client two: level 4 going two levels lighter and cool" data-cap="A natural level 4 who wants two levels lighter, cool and not brassy." aria-label="Open: Client 2"><img class="" src="img/client-2.png" width="780" height="1688" alt="Client two: level 4 going two levels lighter and cool" loading="lazy"><span class="cap">Client 2</span></button>
-    <button type="button" class="hit tile" data-lb="img/client-3.png" data-alt="Client three: level 5 walk-in going to a soft neutral level 8" data-cap="A level 5 walk-in who wants a soft, neutral level 8." aria-label="Open: Client 3"><img class="" src="img/client-3.png" width="780" height="1688" alt="Client three: level 5 walk-in going to a soft neutral level 8" loading="lazy"><span class="cap">Client 3</span></button>
+
+<section class="sec dark" id="closer" aria-labelledby="h-cl">
+  <h2 id="h-cl">Take a closer look.</h2>
+  <div class="lab" id="toner-lab" data-fx="scale-in">
+    <div class="swatch" style="--sw:#8a6440"><span></span></div>
+    <div class="range"><label for="lift">Lift <output id="lv-out"></output></label><input id="lift" type="range" min="5" max="10" step="1" value="6"></div>
+    <div class="toners" role="group" aria-label="Toners"><button type="button" data-toner="blue-green" aria-pressed="false"><i style="--c:#1f8a86" aria-hidden="true"></i>Blue-green</button><button type="button" data-toner="blue" aria-pressed="false"><i style="--c:#2f5fae" aria-hidden="true"></i>Blue</button><button type="button" data-toner="blue-violet" aria-pressed="false"><i style="--c:#4a46a0" aria-hidden="true"></i>Blue-violet</button><button type="button" data-toner="violet" aria-pressed="false"><i style="--c:#6e3a8e" aria-hidden="true"></i>Violet</button></div>
+    <p class="msg" aria-live="polite"></p>
   </div>
-  <p class="hint-cue">Tap a screen to open it</p>
+  <script type="application/json" id="toner-data">{"levels": {"5": {"name": "Light brown", "hex": "#6b4a31", "warm": "#a8421f", "pigment": "Red-orange", "fix": ["blue-green"], "neutral": "#5c4a3e", "neutralLabel": "Neutral medium brown"}, "6": {"name": "Dark blonde", "hex": "#8a6440", "warm": "#c4621f", "pigment": "Orange", "fix": ["blue"], "neutral": "#7a6553", "neutralLabel": "Neutral dark blonde"}, "7": {"name": "Medium blonde", "hex": "#a8804f", "warm": "#d0842c", "pigment": "Gold-orange", "fix": ["blue", "blue-violet"], "neutral": "#957f68", "neutralLabel": "Neutral medium blonde"}, "8": {"name": "Light blonde", "hex": "#c4a06a", "warm": "#dca23e", "pigment": "Yellow-orange", "fix": ["blue-violet"], "neutral": "#b09c82", "neutralLabel": "Neutral light blonde"}, "9": {"name": "Very light blonde", "hex": "#dcc18f", "warm": "#e6c457", "pigment": "Yellow", "fix": ["violet"], "neutral": "#cbbda4", "neutralLabel": "Neutral very light blonde"}, "10": {"name": "Lightest blonde", "hex": "#ece0bd", "warm": "#efe0a0", "pigment": "Pale yellow", "fix": ["violet"], "neutral": "#e0d8c6", "neutralLabel": "Neutral lightest blonde"}}}</script>
+  
+  <div class="captabs" role="tablist" aria-label="Captions" data-tabs="cap-brassy"><button type="button" role="tab" aria-selected="true" tabindex="0" data-line="Slide to lighten the hair from level 5 to level 10." data-jump="#lift">Lift</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-line="Each level uncovers its own warmth, from red-orange to pale yellow." data-jump="#lift">Warmth</button><button type="button" role="tab" aria-selected="false" tabindex="-1" data-line="Pick the toner across the wheel to make it neutral." data-jump="#toner-lab .toners button">Tone</button></div>
+  <p class="capline" id="cap-brassy" aria-live="polite">Slide to lighten the hair from level 5 to level 10.</p>
 </section>
-<section class="s dark" data-go=".btn" aria-labelledby="h-5">
-  <h2 id="h-5" data-fx="lines"><span class="ln">Want one</span><span class="ln">for your students?</span></h2>
-  <a class="btn" href="https://jackiemiller.co/#contact">Let's talk</a>
+<section class="sec light" id="numbers" aria-labelledby="h-num">
+  <h2 id="h-num">Built for how students learn.</h2>
+  <div class="bento">
+    <button type="button" class="tile" data-modal data-title="10 minutes" data-text="The lesson is built to take about ten minutes." aria-label="10 minutes. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="10">10</span><span class="unit">minutes</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="4 screens" data-text="The problem, Level Lab, Fix it, and Prove it." aria-label="4 screens. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="4">4</span><span class="unit">screens</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="3 practice clients" data-text="Each client asks for a different lift, and every answer is scored." aria-label="3 practice clients. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big" data-count="3">3</span><span class="unit">practice clients</span>
+    </button>
+    <button type="button" class="tile" data-modal data-title="Works on a phone" data-text="It runs in any browser, on a phone or a laptop, with nothing to install." aria-label="Works on a phone. Open details.">
+      <span class="open" aria-hidden="true">+</span><span class="big wordy">Works on a phone</span><span class="unit"></span>
+    </button>
+  </div>
 </section>
-<p class="note">Sample lesson. Swatches are illustrations, not formulas.</p>
+<section class="sec dark" aria-labelledby="h-close">
+  <div data-fx="fade-up">
+  <h2 id="h-close">Want a lesson like this for your course?</h2>
+  <a class="btn red" href="https://jackiemiller.co/#contact">Let's talk</a><br>
+  <a class="quiet" href="/why-blonde-goes-brassy/lesson/">Try it</a>
+  </div>
+</section>
+<section class="sec light" id="questions" aria-labelledby="h-qa">
+  <h2 id="h-qa">Questions.</h2>
+  <div class="qa" data-fx="slide-stagger">
+    <details><summary>Who is this for?</summary><p>Cosmetology students learning color. Educators can drop it into a course they already teach.</p></details>
+    <details><summary>Can you build one for my course?</summary><p>Yes. I build lessons like this from your material, in your voice.</p></details>
+    <details class="fine"><summary>Fine print</summary><p>Sample lesson. Swatches are illustrations, not formulas.</p></details>
+  </div>
+</section>
 </main>
-<footer><div class="wrap foot"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
+<footer class="foot"><div class="wrap"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
 <script src="/assets/story.js" defer></script>
 </body>
 </html>
