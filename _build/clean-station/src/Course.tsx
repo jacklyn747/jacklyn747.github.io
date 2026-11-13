@@ -7,6 +7,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 const CASE_URL = "https://work.jackiemiller.co/";
+const STORY_URL = "/clean-station/";
 import Capstone, { CAP_HINTS } from "./Capstone";
 import "./course.css";
 
@@ -433,7 +434,7 @@ export default function Course() {
     <div className="crs">
       {/* top bar */}
       <div className="crs-top">
-        <a href={CASE_URL} className="exit">← Exit</a>
+        <a href={STORY_URL} className="exit">← Exit</a>
         <span className="wordmark"><span className="mk" />Clean Station</span>
         <span className="lessonpips" aria-hidden>
           {[1, 2, 3, 4, 5, 6].map((n) => (

@@ -109,7 +109,7 @@ function Shell({ children }) {
   return (
     <div className="app">
       {/* Same exit as the other work.jackiemiller.co case studies. _top leaves an iframe embed too. */}
-      <a className="exit" href="https://work.jackiemiller.co/" target="_top">
+      <a className="exit" href="/why-blonde-goes-brassy/" target="_top">
         ← Exit
       </a>
       {children}

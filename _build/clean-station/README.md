@@ -14,13 +14,13 @@ That writes the finished course to `dist/`.
 
 ## Publish
 
-Copy everything inside `dist/` to `/clean-station/` at the repo root, replacing what is there:
+Copy everything inside `dist/` to `/clean-station/course/` at the repo root, replacing what is there. Leave `/clean-station/index.html` alone: it's the hand-written story page.
 
 ```
-rm -rf ../../clean-station && cp -R dist ../../clean-station
+rm -rf ../../clean-station/course && cp -R dist ../../clean-station/course
 ```
 
-The live page is then `/clean-station/` on work.jackiemiller.co once the branch is merged.
+The course is then `/clean-station/course/` on work.jackiemiller.co once the branch is merged.
 
 ## Where things live
 

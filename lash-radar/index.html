@@ -5,127 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lash Radar · Jackie Miller</title>
 <meta name="description" content="A lash training app I built that keeps courses current.">
+<link rel="canonical" href="https://work.jackiemiller.co/lash-radar/">
+<meta property="og:title" content="Lash Radar · Jackie Miller">
+<meta property="og:description" content="A lash training app I built that keeps courses current.">
+<meta property="og:url" content="https://work.jackiemiller.co/lash-radar/">
+<meta property="og:image" content="https://cdn.prod.website-files.com/6ae591ce087f836810280258/6af4d6a565aa36315832ff0d_jackie-miller-share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-<style>
-@font-face{font-family:'Humane';src:url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802a7_Humane-Regular.ttf') format('truetype');font-display:swap}
-:root{--black:#0A0A0A;--bone:#F2EEE6;--text:#CFCAC2;--red:#B5121B;--grey:#8a8a8a;--btn:#e9e9e9;--box-line:rgba(230,230,230,.1);--line:rgba(255,255,255,.1)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--black) url('https://cdn.prod.website-files.com/6ae591ce087f836810280258/6ae591d0087f8368102802bb_Group%2010268.png') 50% 50%/cover repeat-y;color:var(--text);font:400 16px/1.45 'IBM Plex Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;position:relative;-webkit-font-smoothing:antialiased}
-body:before{content:"";position:absolute;top:0;bottom:0;left:50%;width:4px;transform:translateX(-50%);border-left:1px solid var(--line);border-right:1px solid var(--line);pointer-events:none}
-@media(max-width:479px){body:before{display:none}}
-body>*{position:relative;z-index:1}
-.wrap{max-width:1358px;margin:0 auto;padding:0 20px;width:100%}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
-header a{font:400 20px 'Bebas Neue',sans-serif;letter-spacing:-.32px;color:var(--bone);text-decoration:none;transition:color .4s}
-header a:hover{color:var(--text)}
-main{flex:1;padding:72px 0 120px}
-.top{text-align:center;display:grid;justify-items:center;gap:26px}
-.kicker{font-size:14px;font-weight:500;letter-spacing:-.48px;text-transform:uppercase;color:var(--bone);line-height:1.05}
-.kicker span{display:block;font-weight:400;color:var(--text);margin-bottom:6px}
-h1{font:400 clamp(110px,18vw,260px)/.81 'Humane',Arial,sans-serif;text-transform:uppercase;color:var(--bone)}
-.lede{max-width:620px}
-.tag{font-size:14px;text-transform:uppercase;color:var(--red)}
-.btn{display:inline-block;font:400 16px/1.1 'IBM Plex Mono',monospace;text-transform:uppercase;background:var(--btn);color:var(--black);padding:18px 40px;border-radius:56px;text-decoration:none;white-space:nowrap;transition:background-color .45s,color .45s}
-.btn:hover{background:var(--grey);color:var(--bone)}
-.btn.ghost{background:transparent;color:var(--bone);border:1px solid rgba(242,238,230,.35)}
-.btn.ghost:hover{border-color:var(--bone)}
-.demo{margin-top:100px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:60px;align-items:center}
-.demo h2,.sec h2{font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;letter-spacing:-.48px;color:var(--bone);margin-top:10px}
-.demo p{margin-top:16px;max-width:520px}
-.tabs{margin-top:28px;display:grid;gap:12px;max-width:520px}
-.tabs div{padding:16px 18px;background:#1c1c1c;border:1px solid var(--box-line);border-radius:8px}
-.tabs b{display:block;font:400 22px/1 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.2px;margin-bottom:6px}
-.actions{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-.phone{width:390px;height:780px;border-radius:44px;border:10px solid #1c1c1c;box-shadow:0 0 0 1px var(--box-line),0 30px 80px rgba(0,0,0,.6);overflow:hidden;background:#0D0D0E}
-.phone iframe{width:100%;height:100%;border:0;display:block}
-.sec{margin-top:120px}
-.sec>p{margin-top:16px;max-width:640px}
-.steps{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.step{padding:30px;background:#1c1c1c;border:1px solid var(--box-line);border-radius:8px}
-.step small{display:block;font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--red);margin-bottom:12px}
-.step h3{font:400 32px/.95 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.3px}
-.step p{margin-top:12px}
-.feature{margin-top:40px;padding:40px;background:#1c1c1c;border:1px solid rgba(181,18,27,.45);border-radius:8px}
-.feature small{display:block;font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--red);margin-bottom:14px}
-.feature h3{font:400 clamp(34px,4vw,56px)/.92 'Bebas Neue',sans-serif;color:var(--bone);letter-spacing:-.4px;max-width:900px}
-.feature p{margin-top:16px;max-width:720px}
-.feature .note{font-size:14px;color:var(--grey)}
-@media(max-width:479px){.feature{padding:26px}}
-.end{margin-top:120px;text-align:center;display:grid;justify-items:center;gap:22px}
-.fine{margin-top:60px;font-size:13px;color:var(--grey);max-width:720px}
-footer{border-top:1px solid var(--line);padding:24px 0;font-size:13px;color:var(--grey)}
-@media(max-width:960px){.demo{grid-template-columns:1fr}.phone{justify-self:center}}
-@media(max-width:479px){.phone{width:100%;height:680px;border-radius:32px;border-width:8px}}
-</style>
+<link rel="stylesheet" href="/assets/story.css">
 </head>
 <body>
 <header><div class="wrap"><a href="https://jackiemiller.co">Jackie Miller</a><a href="/">+ Work</a></div></header>
-<main><div class="wrap">
-  <div class="top">
-    <p class="kicker"><span>Case study 02 / Beauty</span>A studio app for lash artists</p>
-    <h1>Lash Radar</h1>
-    <p class="lede">Lash courses go stale fast. I built Lash Radar to see what a lash course looks like when it keeps up. It holds the courses, the tools artists reach for at the chair, and training that keeps up with what clients are searching for.</p>
+<main>
+<a class="back" href="https://work.jackiemiller.co/">&larr; Work</a>
+
+<section class="s dark" data-go=".btn" aria-labelledby="h-1">
+  <p class="label">Case study 03 / Lash</p>
+  <h1 id="h-1">Lash Radar</h1>
+  <p class="line">Lash courses go stale fast. This one keeps up.</p>
+  <div class="media" data-fx="scale">
+    <a class="hit phone" href="/lash-radar/app/" aria-label="Try the demo"><img class="scroll-scale" src="img/trend-radar.png" width="780" height="1688" alt="Lash Radar on a phone, showing the Trend Radar list of rising lash trends"></a>
   </div>
-
-  <section class="demo">
-    <div>
-      <span class="tag">/ The demo</span>
-      <h2>Four tabs. One for each job.</h2>
-      <p>This is the working prototype. Tap around in the phone, or open it on your own phone and add it to your home screen.</p>
-      <div class="tabs">
-        <div><b>Trend Radar</b>What clients are searching for, ranked by how fast it's rising. Each trend opens a how-to, a scope check, and what it means for the business.</div>
-        <div><b>Station</b>Lash weight math, glue cure and freshness, cost per set, and a reaction triage that sorts symptoms and tells you who to send the client to.</div>
-        <div><b>TDLR Vault</b>A daily sanitation checklist, a safety data sheet binder, and a scope-of-practice chart, each tied to the Texas rule behind it.</div>
-        <div><b>Mapper</b>Map curl and diameter zone by zone on a drawn eye, and pick fiber colors for a client's eye color and skin undertone.</div>
-      </div>
-      <div class="actions">
-        <a class="btn" href="app/">Open the demo</a>
-      </div>
-    </div>
-    <div class="phone"><iframe src="app/" title="Lash Radar demo" loading="lazy"></iframe></div>
-  </section>
-
-  <section class="sec">
-    <span class="tag">/ / How I built it</span>
-    <h2>Four steps. Same as every project.</h2>
-    <p>This is the way I work on everything, and here's what each step looked like for a lash studio.</p>
-    <div class="steps">
-      <div class="step"><small>01 / Move into their world</small><h3>PDFs nobody finishes, and artists with full hands.</h3><p>The courses sat in PDF files. Nobody could tell who finished, where students got stuck, or whether a lesson worked. And the people using it spend the day with both hands on a client and a phone on the tray. So everything had to fit a phone, install like an app, and keep each job one tap away.</p></div>
-      <div class="step"><small>02 / Build the foundation</small><h3>The courses are the heart of it.</h3><p>Their classic, volume and other foundation courses move out of the PDFs and into the app as short lessons. In an app, you can see where students drop off and collect their feedback, so a weak lesson gets fixed instead of sitting in a file. The full course content stays private, so it isn't in this public demo.</p></div>
-      <div class="step"><small>03 / Add what fits</small><h3>A reason to open it after the course is done.</h3><p>Their students are mostly working lash artists. Once they finish a course, a course app has nothing left to offer them. So I added what they reach for mid-appointment: lash weight math, glue cure and freshness, cost per set, a reaction triage, an eye mapper, and a vault of Texas rules for sanitation and scope. The tools keep them coming back, and every visit puts the studio's training in front of them.</p></div>
-      <div class="step"><small>04 / Connect it</small><h3>Hook it to the world outside the studio.</h3><p>The last step ties the app to live data so the training never goes stale. That's the trend radar, and it's the part I'm proudest of.</p></div>
-    </div>
-    <div class="feature">
-      <small>The core idea / A course that stays current</small>
-      <h3>Courses go out of date the day you finish them.</h3>
-      <p>That was the problem I kept coming back to before I built anything. Lash trends move fast, and technology moves faster. A course written this month is behind by next month. So the question became: how do you build training that doesn't have to be rebuilt every time the industry shifts?</p>
-      <p>Lash Radar answers it with search data. At the start of each week the studio picks the keywords it cares about, or lets the app pick them, and narrows the results to its own city or region. The app pulls that week's most searched lash topics from Google search trends, ranks what's rising, and turns each one into a short tutorial.</p>
-      <p>The course stops being a finished product. It's living: what clients are searching for this week becomes what the artists learn this week. The artists can edit any tutorial before they use it.</p>
-      <p class="note">In this public demo the trends are sample data, labeled that way in the app. The live version runs on the studio's own Google account, so nothing here is connected to real search data.</p>
-    </div>
-  </section>
-
-  <section class="sec">
-    <span class="tag">/ / / The guardrails</span>
-    <h2>Built for people with a license on the line.</h2>
-    <p>A tool for licensed professionals has to earn trust before it earns screen time. These are the calls that keep it safe to use.</p>
-    <div class="steps">
-      <div class="step"><small>Rules from the source</small><h3>No rule written from memory.</h3><p>Every Texas rule in the Vault links to TDLR or the Texas Administrative Code and shows when it was checked. Anything the sources don't settle is flagged for a direct answer from TDLR or an attorney.</p></div>
-      <div class="step"><small>Scope on every trend</small><h3>Popular doesn't mean allowed.</h3><p>Lash lifts and tints are outside the Texas eyelash extension license. Any trend that touches them carries a warning and links to the rule, so nobody books a service their license doesn't cover.</p></div>
-      <div class="step"><small>Triage, not diagnosis</small><h3>It sorts and refers out.</h3><p>Eye reactions can't be undone. The triage tool helps an artist judge how urgent a reaction looks and who to send the client to. It never diagnoses and never suggests medication.</p></div>
-      <div class="step"><small>Their craft, their call</small><h3>The expertise belongs to the artists.</h3><p>Technique notes and tutorials are drafts for the studio's own educators to rewrite in their own words, and nothing in the app claims to be state approved training.</p></div>
-      <div class="step"><small>Honest gaps</small><h3>What the prototype doesn't do yet.</h3><p>It needs an internet connection, and checklists and logs save to each phone without syncing between artists. Both are next if the studio takes it into daily use.</p></div>
-    </div>
-  </section>
-
-  <section class="end">
-    <span class="tag">/ / / Let's talk</span>
-    <h2 style="font:400 clamp(40px,5vw,80px)/.9 'Bebas Neue',sans-serif;color:var(--bone)">Your craft, in an app your team will use.</h2>
-    <a class="btn" href="https://jackiemiller.co/#contact">Start a conversation</a>
-    <p class="fine">Trend figures in the demo are sample data, not live search results. Technique content is a draft for review, not instruction. Nothing here is legal advice or state approved training. Vanilla JavaScript · Tailwind CSS · Lucide icons. Built by Jackie Miller.</p>
-  </section>
-</div></main>
-<footer><div class="wrap">© 2026, Jackie Miller. All Rights Reserved.</div></footer>
+  <a class="btn" href="/lash-radar/app/">Try the demo</a>
+</section>
+<section class="s light" data-go=".tile" aria-labelledby="h-2">
+  <div class="rule"></div>
+  <h2 id="h-2">Spots trends.</h2>
+  <p class="line">What clients search for becomes the next lesson.</p>
+  <div class="media bento three" data-fx="stagger">
+    <button type="button" class="hit tile" data-lb="img/trend-espresso.png" data-alt="Trend detail for Espresso Brown Lashes, with a short masterclass and application steps" data-cap="Espresso Brown Lashes, up 340 percent." aria-label="Open: Espresso brown"><img class="" src="img/trend-espresso.png" width="780" height="1688" alt="Trend detail for Espresso Brown Lashes, with a short masterclass and application steps" loading="lazy"><span class="cap">Espresso brown</span></button>
+    <button type="button" class="hit tile" data-lb="img/trend-manga.png" data-alt="Trend detail for Manga Spikes, with mapping steps" data-cap="Manga Spikes, up 280 percent." aria-label="Open: Manga spikes"><img class="" src="img/trend-manga.png" width="780" height="1688" alt="Trend detail for Manga Spikes, with mapping steps" loading="lazy"><span class="cap">Manga spikes</span></button>
+    <button type="button" class="hit tile" data-lb="img/trend-korean-lift.png" data-alt="Trend detail for Korean Lash Lift, flagged out of scope for a lash artist" data-cap="Korean Lash Lift, flagged out of scope for a lash artist." aria-label="Open: Korean lift"><img class="" src="img/trend-korean-lift.png" width="780" height="1688" alt="Trend detail for Korean Lash Lift, flagged out of scope for a lash artist" loading="lazy"><span class="cap">Korean lift</span></button>
+  </div>
+  <p class="hint-cue">Tap a screen to open it</p>
+</section>
+<section class="s dark" data-go=".hit" aria-labelledby="h-3">
+  <div class="rule"></div>
+  <h2 id="h-3">Lives at the chair.</h2>
+  <p class="line">Lash math, glue cure, cost per set. One tap.</p>
+  <div class="media" data-fx="pan">
+    <button type="button" class="hit phone" data-lb="img/station.png" data-alt="Station tools screen with the lash weight calculator" aria-label="Enlarge: Lives at the chair."><img class="scroll-pan" src="img/station.png" width="780" height="1688" alt="Station tools screen with the lash weight calculator" loading="lazy"></button>
+  </div>
+  <p class="hint-cue">Tap to enlarge</p>
+</section>
+<section class="s light" data-go=".hit" aria-labelledby="h-4">
+  <div class="rule"></div>
+  <h2 id="h-4">Rules, sourced.</h2>
+  <p class="line">Every rule links to where it came from.</p>
+  <div class="media" data-fx="blur">
+    <button type="button" class="hit phone" data-reveal aria-expanded="false" aria-controls="rv-4" aria-label="Tap the screen"><img class="" src="img/rules-vault.png" width="780" height="1688" alt="Rules Vault screen with a daily sanitation checklist" loading="lazy"></button>
+  </div>
+  <p class="hint-cue">Tap the screen</p>
+  <p class="reveal" id="rv-4" hidden>Need state approval? Built in. Demo data. Not legal advice.</p>
+</section>
+<section class="s dark" data-go=".btn" aria-labelledby="h-5">
+  <h2 id="h-5" data-fx="lines"><span class="ln">Your craft,</span><span class="ln">in an app your</span><span class="ln">students open.</span></h2>
+  <a class="btn" href="https://jackiemiller.co/#contact">Let's talk</a>
+</section>
+<p class="note">Demo data. Not legal advice.</p>
+</main>
+<footer><div class="wrap foot"><span>© 2026, Jackie Miller. All Rights Reserved.</span><nav aria-label="Footer"><a href="https://jackiemiller.co/#contact">Let's talk</a><a href="https://www.instagram.com/jackiemillerlxd/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/jackiemillerlxd/" target="_blank" rel="noopener">LinkedIn</a><a href="https://read.jackiemiller.co" target="_blank" rel="noopener">Newsletter</a></nav></div></footer>
+<script src="/assets/story.js" defer></script>
 </body>
 </html>
-
