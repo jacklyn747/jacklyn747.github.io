@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LASH RADAR</title>
-<meta name="description" content="Studio assistant and trend feed for lash artists. Prototype by Jackie Miller for The Lash Collaboration.">
+<meta name="description" content="Studio assistant and trend feed for lash artists. Prototype by Jackie Miller.">
 <meta name="theme-color" content="#0D0D0E">
 <meta name="color-scheme" content="dark">
 <meta name="mobile-web-app-capable" content="yes">
@@ -108,7 +108,7 @@
     </div>
     <div id="filters" class="no-scrollbar -mx-4 px-4 mt-3 flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Trend categories"></div>
     <div id="trendList" class="mt-4 space-y-3"></div>
-    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for Kim &amp; Bri to edit. Scope badges link to TDLR sources in the Vault tab.</p>
+    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for the studio's own educators to edit. Scope badges link to TDLR sources in the Vault tab.</p>
   </section>
 
   <!-- TAB 2: STATION -->
@@ -356,7 +356,7 @@
         </div>
       </div>
       <svg id="fiberStrip" viewBox="0 0 300 44" class="mt-4 w-full h-11" aria-hidden="true"></svg>
-      <p class="mt-3 text-[11px] text-mute leading-relaxed">The eye diagram above uses this blend. Suggestions are a starting logic for Kim &amp; Bri to replace with their own.</p>
+      <p class="mt-3 text-[11px] text-mute leading-relaxed">The eye diagram above uses this blend. Suggestions are a starting logic for the studio's own educators to replace with their own.</p>
     </div>
   </section>
 
@@ -547,7 +547,7 @@ function openTrend(id) {
     <h3 class="mt-6 text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">Consumer Shift</h3>
     <p class="mt-2 text-[14px] leading-relaxed text-fg/90">${esc(t.shift)}</p>
     ${courseLinks(t.id)}
-    <p class="mt-6 pt-4 border-t border-line text-[11px] text-mute leading-relaxed">Draft content for Kim &amp; Bri to review. Velocity is demo data.</p>`);
+    <p class="mt-6 pt-4 border-t border-line text-[11px] text-mute leading-relaxed">Draft content for the studio's own educators to review. Velocity is demo data.</p>`);
 }
 
 /* Courses are not part of the public demo. */
@@ -614,7 +614,7 @@ function showTool(tool) {
 /* ---------- Tool A: weight ---------- */
 // Teaching model: capacity = natural lash cross-section x reference length.
 // Fan load = n fibers x extension cross-section x extension length. V = pi * r^2 * l.
-const L_REF = 12; // mm. Calibration constant for Kim & Bri to set.
+const L_REF = 12; // mm. Calibration constant for the studio to set.
 const EXT_D = [0.03, 0.05, 0.07, 0.10, 0.12, 0.15];
 let wExt = 0.07;
 function initWeight() {
@@ -663,7 +663,7 @@ function calcWeight() {
         <p>Fan (${req}): ${(per * req).toFixed(4)} mm³</p>
         <p>Natural limit: π · ${rN.toFixed(3)}² · ${L_REF} = ${cap.toFixed(4)} mm³</p>
       </div>
-      <p class="mt-3 text-[11px] text-mute leading-relaxed">Teaching model, not a clinical standard. The ${L_REF}mm reference length is a calibration setting for Kim &amp; Bri.</p>
+      <p class="mt-3 text-[11px] text-mute leading-relaxed">Teaching model, not a clinical standard. The ${L_REF}mm reference length is a calibration setting for the studio.</p>
     </div>`;
   icons();
 }
@@ -1035,7 +1035,7 @@ function renderMapUI() {
   $('#curlBtns').innerHTML = CURLS.map(c => `<button type="button" data-curl="${c}" class="h-10 rounded-lg border text-[13px] font-semibold ${c === map.curl ? 'bg-bronze text-ink border-bronze' : 'border-line text-mute'}">${c}</button>`).join('');
   $('#diaBtns').innerHTML = DIAS.map(d => `<button type="button" data-dia="${d}" class="h-10 rounded-lg border text-[12px] font-semibold tabular-nums ${d === map.dia ? 'bg-bronze text-ink border-bronze' : 'border-line text-mute'}">${d.toFixed(2)}</button>`).join('');
   const s = SHAPES[shape];
-  $('#mapNote').innerHTML = `<p class="text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">${esc(s.style)} · starter ${s.curl} curl</p><p class="mt-1.5 text-fg/90">${esc(s.note)}</p><p class="mt-2 text-[11px] text-mute">Starter maps are placeholders. Kim &amp; Bri set the house maps.</p>`;
+  $('#mapNote').innerHTML = `<p class="text-[10px] uppercase tracking-[0.2em] text-bronze font-semibold">${esc(s.style)} · starter ${s.curl} curl</p><p class="mt-1.5 text-fg/90">${esc(s.note)}</p><p class="mt-2 text-[11px] text-mute">Starter maps are placeholders. The studio sets its own house maps.</p>`;
 }
 function hexMix() {
   const tot = mix.esp + mix.moc + mix.blk || 1;
