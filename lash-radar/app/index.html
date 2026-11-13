@@ -108,7 +108,7 @@
     </div>
     <div id="filters" class="no-scrollbar -mx-4 px-4 mt-3 flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Trend categories"></div>
     <div id="trendList" class="mt-4 space-y-3"></div>
-    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for your studio to edit. Scope badges link to official sources in the Vault tab.</p>
+    <p class="mt-6 text-[11px] leading-relaxed text-mute">Trend figures are demo data, not live search results. Craft content is a draft for your studio to edit. Scope tags link to official sources in the Rules Vault tab.</p>
   </section>
 
   <!-- TAB 2: STATION -->
@@ -233,7 +233,7 @@
   <section id="view-vault" hidden aria-labelledby="t-vault">
     <div class="flex items-baseline justify-between">
       <h2 id="t-vault" class="font-serif text-2xl">Rules Vault</h2>
-      <span class="text-[11px] text-mute">Texas compliance</span>
+      <span class="text-[11px] text-mute">Sourced rules</span>
     </div>
 
     <div class="mt-4 rounded-2xl bg-card border border-line p-4 flex items-center gap-4">
@@ -272,7 +272,7 @@
 
     <div class="mt-3 rounded-2xl bg-card border border-line p-4">
       <h3 class="font-serif text-lg">Scope-of-Practice Matrix</h3>
-      <p class="text-[12px] text-mute mt-0.5">Based on Texas licensing rules. Checked 10/26/2026.</p>
+      <p class="text-[12px] text-mute mt-0.5">Based on state licensing rules. Checked 10/26/2026.</p>
       <div class="mt-3 -mx-4 overflow-x-auto no-scrollbar">
         <table class="min-w-[520px] w-full text-[13px] mx-4">
           <thead>
@@ -444,7 +444,7 @@ const TRENDS = [
   { id: 'ai', kw: 'AI Lash Mapping from Photos', vel: 160, cat: 'tech', scope: 'ok',
     sum: 'Apps that read an intake photo and suggest a lash map by eye shape.',
     master: "Photo mapping is a consult tool, not a replacement for the artist's eye. It's good at shape and symmetry and weak at lash health and density. Treat its map as a draft.",
-    sop: ['Take the intake photo straight on, eyes open, even light.', 'Run the shape suggestion in the Mapper tab.', 'Adjust zones by hand for lash health and client preference.', 'Save the final map to the client card for fills.', 'Get written consent before storing face photos. Texas biometric privacy rules may apply; ask an attorney.'],
+    sop: ['Take the intake photo straight on, eyes open, even light.', 'Run the shape suggestion in the Mapper tab.', 'Adjust zones by hand for lash health and client preference.', 'Save the final map to the client card for fills.', 'Get written consent before storing face photos. State biometric privacy rules may apply; ask an attorney.'],
     shift: 'Clients expect a custom consult with visuals. A map they see before you start cuts down on "this isn\'t what I wanted."' },
   { id: 'tint', kw: 'Lash Tint + Lift Combos', vel: 140, cat: 'color', scope: 'warn',
     sum: 'Lift-and-tint bundles sold as the "no-mascara" package.',
@@ -503,8 +503,8 @@ function sync() {
 /* ---------- radar ---------- */
 function scopeBadge(scope) {
   return scope === 'ok'
-    ? '<span class="inline-flex items-center gap-1 rounded-md border border-live/30 bg-live/10 text-live px-2 py-1 text-[10px] font-semibold tracking-wide">[Scope OK: Eyelash Specialist]</span>'
-    : '<span class="inline-flex items-center gap-1 rounded-md border border-amber-400/30 bg-amber-400/10 text-amber-300 px-2 py-1 text-[10px] font-semibold tracking-wide">[Scope Warning: Esthetician/Cosmo Required]</span>';
+    ? '<span class="inline-flex items-center gap-1 rounded-md border border-live/30 bg-live/10 text-live px-2 py-1 text-[10px] font-semibold tracking-wide">[In scope: lash artist]</span>'
+    : '<span class="inline-flex items-center gap-1 rounded-md border border-amber-400/30 bg-amber-400/10 text-amber-300 px-2 py-1 text-[10px] font-semibold tracking-wide">[Out of scope: lash artist]</span>';
 }
 function renderFilters() {
   $('#filters').innerHTML = Object.entries(CATS).map(([k, v]) =>
@@ -534,7 +534,7 @@ function openTrend(id) {
   const scopeNote = t.scope === 'warn' ? `
     <div class="mt-4 rounded-xl border border-amber-400/30 bg-amber-400/5 p-3.5 text-[13px] leading-relaxed">
       <p class="flex items-center gap-1.5 font-semibold text-amber-300"><i data-lucide="alert-triangle" class="w-4 h-4"></i>Scope check</p>
-      <p class="mt-1.5 text-fg/90">The Texas eyelash extension specialist license covers extensions only. State rules list hair coloring and waving outside that license, and a 2023 House bill analysis says lifts and tints need an esthetician or cosmetology license. Teachers need the license for what they teach. Confirm with the state before offering or teaching this.</p>
+      <p class="mt-1.5 text-fg/90">The eyelash extension specialist license covers extensions only. State rules list hair coloring and waving outside that license, and a 2023 House bill analysis says lifts and tints need an esthetician or cosmetology license. Teachers need the license for what they teach. Confirm with the state before offering or teaching this.</p>
       <p class="mt-2 space-x-3"><a class="text-bronze underline underline-offset-2" href="${SRC.scope.url}" target="_blank" rel="noopener">Official source: scope</a><a class="text-bronze underline underline-offset-2" href="${SRC.hb3029.url}" target="_blank" rel="noopener">Official source: lifts and tints</a></p>
     </div>` : '';
   openSheet(CATS[t.cat] + ' · +' + t.vel + '%', t.kw, `
@@ -752,7 +752,7 @@ const TRI_R = {
     script: '"What you\'re feeling is most likely irritation from the adhesive fumes. It usually settles within a day. Please rinse with a sterile saline eye wash and avoid rubbing. If it isn\'t clearly better in 24 hours, or your vision changes at all, please see a doctor and text me so I can note it."',
     proto: ['Stop work if it happens in the chair. Keep the client\'s eyes closed.', 'Check eye-pad placement and gaps along the lash line.', 'Direct airflow across the face, not into the eyes, until bonds cure.', 'Record adhesive, lot, and room humidity in the client file.', 'Next visit: confirm eyes stay fully closed and bonds cure before opening.'] },
   allergy: { name: 'Possible adhesive allergy', tone: 'text-red-400', what: 'Allergic reactions to lash adhesive often show up a day or more later, with puffy lids and strong itching. They can get worse with each exposure.',
-    script: '"This could be a reaction to the adhesive. I can\'t diagnose it, so I want you to see a doctor or pharmacist. I recommend we remove the extensions so the adhesive is gone. If the swelling is severe, see the doctor first."',
+    script: '"This could be a reaction to the adhesive. I can\'t diagnose it, so I want you to see a doctor or pharmacist. I recommend removing the extensions so the adhesive is gone. If the swelling is severe, see the doctor first."',
     proto: ['Refer to a physician or pharmacist. Don\'t recommend medications.', 'Offer professional removal. If swelling is severe, the doctor comes first.', 'Don\'t reapply with the same adhesive. Flag the client file.', 'Record adhesive, lot number, onset, and symptoms.', 'Any future service needs medical clearance and a patch test.'] },
   mech: { name: 'Likely mechanical irritation', tone: 'text-sky-300', what: 'A pad, tape, tweezer, or stray fiber touching the eye or waterline can cause a localized, gritty, or sharp feeling right away.',
     script: '"That spot looks like irritation from the pad or tape, not the glue. It should settle quickly. If it isn\'t better by tomorrow, or anything feels wrong with your vision, please see a doctor."',
@@ -853,7 +853,7 @@ function cell(v) {
   }[v];
 }
 function renderVault() {
-  $('#scopeRows').innerHTML = SCOPE.map(r => `<tr><td class="py-2.5 pr-2 align-top"><span class="text-fg">${esc(r.s)}</span><a href="${SRC[r.src].url}" target="_blank" rel="noopener" class="block text-[10px] text-bronze underline underline-offset-2 mt-0.5">source</a></td>${r.e.map(v => `<td class="py-2.5 px-2 align-top">${cell(v)}</td>`).join('')}</tr>`).join('');
+  $('#scopeRows').innerHTML = SCOPE.map(r => `<tr><td class="py-2.5 pr-2 align-top"><span class="text-fg">${esc(r.s)}</span><a href="${SRC[r.src].url}" target="_blank" rel="noopener" class="block text-[10px] text-bronze underline underline-offset-2 mt-0.5">Official source</a></td>${r.e.map(v => `<td class="py-2.5 px-2 align-top">${cell(v)}</td>`).join('')}</tr>`).join('');
   $('#sources').innerHTML = Object.values(SRC).map(s => `<li><a class="text-bronze underline underline-offset-2 inline-flex items-start gap-1" href="${s.url}" target="_blank" rel="noopener">${esc(s.label)}<i data-lucide="external-link" class="w-3 h-3 mt-0.5 shrink-0"></i></a></li>`).join('');
   renderChecks();
 }
