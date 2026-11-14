@@ -2,8 +2,8 @@
    Black and bone sections, red as an accent only. */
 :root{--black:#0A0A0A;--bone:#F2EEE6;--text:#CFCAC2;--ink:#0A0A0A;--ink-soft:#3B3935;--red:#B5121B;--grey:#8a8a8a;--grey-dark:#5f5c57;--btn:#e9e9e9;--line:rgba(255,255,255,.12);--line-dark:rgba(10,10,10,.12);--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden;scroll-behavior:smooth;scroll-padding-top:64px}
-body{background:var(--black);color:var(--text);font:400 17px/1.5 'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--black);color:var(--text);font:400 17px/1.5 'IBM Plex Sans',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 button{font:inherit;color:inherit}
 a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,iframe:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--red);outline-offset:4px;border-radius:6px}
@@ -41,11 +41,13 @@ footer.foot a:hover{color:var(--bone)}
 }
 
 /* Sections */
-.sec{padding:140px 20px;text-align:center;position:relative;overflow:hidden}
+.sec{padding:140px 20px;text-align:center;position:relative;overflow:clip}
 .sec.dark{background:var(--black);color:var(--text)}
 .sec.light{background:var(--bone);color:var(--ink-soft)}
 .sec.dark h1,.sec.dark h2,.sec.dark h3{color:var(--bone)}
 .sec.light h1,.sec.light h2,.sec.light h3{color:var(--ink)}
+/* Dark surfaces inside a light section keep light type */
+.sec .card h3,.sec .tile h3,.sec .phone h3{color:var(--bone)}
 h1,h2{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:-.01em;line-height:.95;text-wrap:balance;margin:0 auto}
 h1{font-size:clamp(64px,11vw,148px)}
 h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
@@ -73,6 +75,8 @@ h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
 .phone{display:block;width:min(300px,70vw);margin:0 auto;border-radius:40px;overflow:hidden;border:10px solid #1c1c1c;box-shadow:0 0 0 1px rgba(242,238,230,.14),0 40px 100px rgba(0,0,0,.55);background:var(--black)}
 .sec.light .phone{border-color:var(--ink)}
 .hero-media{margin-top:64px}
+.hero-media .phone{width:min(420px,80vw)}
+@media(max-width:760px){.hero-media .phone{width:100%}}
 
 /* Highlights carousel */
 .rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px max(20px,calc(50vw - 560px)) 24px;margin:56px -20px 0;scrollbar-width:none}
@@ -100,7 +104,7 @@ h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
 @keyframes tick{0%,60%,100%{transform:scale(1)}30%{transform:scale(1.15)}}
 
 /* Chapter: pinned steps (hair strip) */
-.pin{height:320vh;padding:0}
+.pin{height:220vh;padding:0}
 .pin .stick{position:sticky;top:56px;height:calc(100vh - 56px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px}
 .strip{display:flex;gap:6px;margin-top:48px;width:min(720px,100%);height:180px}
 .strip .lv{flex:1;border-radius:14px;position:relative;overflow:hidden;background:var(--base);transition:flex .6s var(--ease)}
@@ -117,13 +121,13 @@ h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
 .pointer{position:absolute;left:50%;transform:translateX(-50%);font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--ink);background:var(--bone);padding:6px 10px;border-radius:14px;border:1px solid var(--line-dark);white-space:nowrap}
 .pointer.top{top:-18px}.pointer.bot{bottom:-18px}
 
-/* Chapter: labels slide in */
-.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:min(980px,100%);margin:64px auto 0}
-.slot{border:1px solid var(--line);border-radius:24px;padding:32px 20px;text-align:center}
-.slot b{display:block;font:400 clamp(30px,3.6vw,44px)/1 'Bebas Neue',sans-serif;color:var(--bone)}
-.slot span{display:block;margin-top:10px;font-size:16px;color:var(--text)}
-.slot:nth-child(1) b{color:var(--bone)}
-.slot .n{display:inline-block;margin-bottom:14px;font:400 12px 'IBM Plex Mono',monospace;color:var(--red)}
+/* Chapter: icon words. One big line icon per word, each opens a modal */
+.icons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:min(980px,100%);margin:64px auto 0}
+.ico{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;min-height:300px;padding:40px 20px 32px;border:1px solid var(--line);border-radius:28px;background:none;color:var(--bone);cursor:pointer;position:relative;transition:border-color .3s,background-color .3s}
+.ico:hover{border-color:rgba(242,238,230,.35);background:rgba(242,238,230,.03)}
+.ico svg{width:min(140px,60%);height:auto;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ico b{font:400 clamp(36px,4.4vw,56px)/1 'Bebas Neue',sans-serif;color:var(--bone)}
+.ico .open{position:absolute;right:16px;top:16px;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px}
 
 /* Chapter: ring */
 .ring{width:min(300px,70vw);aspect-ratio:1;margin:64px auto 0;position:relative}
@@ -136,9 +140,11 @@ h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
 
 /* Chapter: rising stack */
 .stack{width:min(420px,100%);margin:64px auto 0;display:grid;gap:12px}
-.tcard{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-radius:18px;background:#161616;border:1px solid var(--line);text-align:left}
+.tcard{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;min-height:72px;padding:18px 20px;border-radius:18px;background:#161616;border:1px solid var(--line);text-align:left;color:var(--bone);cursor:pointer;transition:border-color .3s}
+.tcard:hover{border-color:rgba(242,238,230,.35)}
+.tcard .go{flex:0 0 32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;margin-left:4px}
 .tcard b{font-weight:500;color:var(--bone)}
-.tcard em{font-style:normal;font:400 14px 'IBM Plex Mono',monospace;color:var(--bone)}
+.tcard em{margin-left:auto;font-style:normal;font:400 14px 'IBM Plex Mono',monospace;color:var(--bone)}
 .tcard em:before{content:"▲ ";color:var(--red)}
 .tcard small{display:block;font:400 11px 'IBM Plex Mono',monospace;text-transform:uppercase;color:var(--grey);margin-bottom:4px}
 
@@ -166,7 +172,8 @@ h2{font-size:clamp(44px,6.5vw,88px);max-width:16ch}
 
 /* Sorter */
 .tools{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:48px;min-height:52px}
-.tool{min-height:44px;padding:0 18px;border-radius:22px;border:1px solid rgba(242,238,230,.3);background:#161616;color:var(--bone);cursor:grab;touch-action:none;user-select:none}
+.tool{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px 0 14px;border-radius:22px;border:1px solid rgba(242,238,230,.3);background:#161616;color:var(--bone);cursor:grab;touch-action:none;user-select:none}
+.tool svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .tool[aria-pressed="true"]{border-color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
 .tool.dragging{position:fixed;z-index:80;pointer-events:none;cursor:grabbing;box-shadow:0 20px 40px rgba(0,0,0,.5)}
 .bins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:28px auto 0;width:min(720px,100%)}
@@ -221,9 +228,11 @@ dialog.modal th{font:400 12px 'IBM Plex Mono',monospace;text-transform:uppercase
 dialog.modal td i{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:8px;background:var(--c)}
 
 /* Hub grid */
-.hub-top{padding:120px 20px 80px;text-align:center;background:var(--black)}
-.hub-top h1{font-size:clamp(48px,7vw,96px);max-width:16ch;color:var(--bone)}
-.prod{padding:96px 20px 0;text-align:center;overflow:hidden}
+.hub-top{padding:48px 20px 40px;text-align:center;background:var(--black)}
+.hub-top h1{font-size:clamp(44px,5.6vw,80px);max-width:22ch;color:var(--bone)}
+.prod{padding:96px 20px 0;text-align:center;overflow:clip}
+.prod.first{padding-top:40px}
+.prod.first .pic{margin-top:32px}
 .prod.dark{background:var(--black)}
 .prod.light{background:var(--bone)}
 .prod h2{font-size:clamp(48px,7vw,96px);max-width:none}
@@ -243,7 +252,9 @@ dialog.modal td i{display:inline-block;width:14px;height:14px;border-radius:50%;
   .sec{padding:96px 20px}
   .pin{padding:0}
   .strip{height:140px}
-  .slots{grid-template-columns:1fr}
+  .icons{grid-template-columns:1fr}
+  .ico{min-height:220px;flex-direction:row;gap:28px;padding:28px 24px}
+  .ico svg{width:96px}
   .bento{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tile:nth-child(1),.tile:nth-child(4){grid-column:span 2}
   .tile{min-height:180px}
