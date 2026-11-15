@@ -227,11 +227,27 @@
     var items = JSON.parse($('#sort-data').textContent);
     var toolBox = $('.tools', sorter), say = $('.msg', sorter), bins = $$('.bin', sorter), reset = $('.reset', sorter);
     var picked = null;
+    /* Line icons for each tool, same stroke as the Sort it icons. Keyed by the sort-data id. */
+    var ICONS = {
+      spatula: '<rect x="9.5" y="2" width="5" height="20" rx="2.5"/>',
+      extractor: '<path d="M12 6v12"/><circle cx="12" cy="4" r="2"/><circle cx="12" cy="20" r="2"/><path d="M10.5 10h3M10.5 14h3"/>',
+      cotton: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5" stroke-dasharray="1.5 2"/>',
+      gauze: '<rect x="4" y="4" width="16" height="16" rx="1.5"/><path d="M9.3 4v16M14.7 4v16M4 9.3h16M4 14.7h16"/>',
+      tweezers: '<path d="M8 3l3.3 16.5L12 21l.7-1.5L16 3"/><path d="M9.6 11h4.8"/>',
+      gloves: '<path d="M7 21v-6L4.5 11.5a1.4 1.4 0 0 1 2.2-1.7L8 11.5V5a1.25 1.25 0 0 1 2.5 0v5V3.8a1.25 1.25 0 0 1 2.5 0V10V4.8a1.25 1.25 0 0 1 2.5 0V11V7a1.25 1.25 0 0 1 2.5 0v8c0 3-2 6-5 6z"/>',
+      sponge: '<rect x="3" y="7" width="18" height="10" rx="3"/><circle cx="8" cy="11" r="1"/><circle cx="12.5" cy="13.5" r="1"/><circle cx="16" cy="10.5" r="1"/>',
+      bowl: '<path d="M3 10h18a9 9 0 0 1-18 0z"/><path d="M8 19.5h8"/>',
+      applicator: '<path d="M5 19L15.5 8.5"/><ellipse cx="18" cy="6" rx="2.2" ry="3.2" transform="rotate(45 18 6)"/>'
+    };
+    function icon(id) {
+      return ICONS[id] ? '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + ICONS[id] + '</svg>' : '';
+    }
     function render() {
       toolBox.innerHTML = '';
       items.filter(function (it) { return !it.placed; }).forEach(function (it) {
         var b = document.createElement('button');
-        b.type = 'button'; b.className = 'tool'; b.textContent = it.label;
+        b.type = 'button'; b.className = 'tool'; b.innerHTML = icon(it.id);
+        b.appendChild(document.createTextNode(it.label));
         b.setAttribute('aria-pressed', String(picked === it)); b.dataset.id = it.id;
         b.addEventListener('click', function () { if (b.dataset.dragged) { delete b.dataset.dragged; return; } select(it); });
         b.addEventListener('pointerdown', function (e) { startDrag(e, b, it); });
@@ -311,5 +327,22 @@
       $('.tool', toolBox).focus();
     });
     render();
+  }
+
+  /* ---------- Live app frame (Lash Radar): hide the desktop scrollbar, keep scrolling ---------- */
+  var live = document.getElementById('live-app');
+  if (live) {
+    var hideBars = function () {
+      try {
+        var d = live.contentDocument;
+        if (!d || !d.head || d.getElementById('jm-no-scrollbar')) return;
+        var st = d.createElement('style');
+        st.id = 'jm-no-scrollbar';
+        st.textContent = 'html,body,*{scrollbar-width:none}::-webkit-scrollbar{display:none}';
+        d.head.appendChild(st);
+      } catch (err) { /* cross-origin: leave it alone */ }
+    };
+    live.addEventListener('load', hideBars);
+    hideBars();
   }
 })();
